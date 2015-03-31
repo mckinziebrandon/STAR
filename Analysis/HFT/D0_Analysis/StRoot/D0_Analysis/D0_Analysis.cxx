@@ -324,7 +324,7 @@ void D0_Analysis::loop()
                     dcaAB                   = D0_track->getdcaAB(); // distance of closest approach between Kaon and Pion
 
 		std::vector<Double_t> dcaA_cut, dcaB_cut, dcaAB_cut, VerdistX_cut, VerdistY_cut, pt_cut(N_h_InvMass_pt);
-        pt_cut = {0.5, 1, 1.5, 2.5, 5, 10};
+        pt_cut = {0, 0.5, 1, 1.5, 2.5, 5, 10};
 
 		// initialize vectors with cut ranges
         for(Int_t i = 0; i < N_h_InvMass; i++){
@@ -359,7 +359,8 @@ void D0_Analysis::loop()
             for(Int_t AB = 0; AB < N_h_InvMass; AB++){
                 if (dcaAB      > dcaAB_cut[AB]) break;
             for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-                if(p_t  < pt_cut[i_hist_pt]){
+                if(p_t  < pt_cut[i_hist_pt+1] &&
+                    p_t > pt_cut[i_hist_pt] ){
                         h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
                         break;
                 }
@@ -401,12 +402,11 @@ void D0_Analysis::finalize()
 	for(Int_t AB = 0; AB < N_h_InvMass; AB++){
 	for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
 	{
-        if (h_InvMass[A][B][X][Y][AB][i_hist_pt]->GetEntries()){
-		    h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Write();
+		    h_InvMass[A][B][X][Y][AB][i_hist_pt]->Write();
             n_histograms += 1;
-        }
+    }
 		
-	}}}}}}
+	}}}}}
 
 
     cout << "\n TOTAL NUMBER OF HISTOGRAMS = " << n_histograms << "\n\n";
