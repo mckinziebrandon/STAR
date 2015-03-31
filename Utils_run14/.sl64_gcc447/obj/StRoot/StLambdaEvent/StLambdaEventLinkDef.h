@@ -1,0 +1,1 @@
+../../../../StRoot/StLambdaEvent/StLambdaEventLinkDef.h

@@ -1,0 +1,1 @@
+../../../../StRoot/StStarBbcUtilities/StStarBbcUtilitiesLinkDef.h

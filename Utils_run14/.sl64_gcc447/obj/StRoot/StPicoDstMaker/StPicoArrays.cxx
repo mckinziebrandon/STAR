@@ -1,0 +1,1 @@
+../../../../StRoot/StPicoDstMaker/StPicoArrays.cxx

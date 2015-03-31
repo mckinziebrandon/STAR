@@ -1,0 +1,131 @@
+
+#ifndef __StStrangenessAna_h__
+#define __StStrangenessAna_h__
+
+#include <vector>
+#include "TString.h"
+#include "TChain.h"
+#include "TFile.h"
+#include "TProfile.h"
+#include "TH1F.h"
+#include "TH2F.h"
+#include "StMessMgr.h"
+#include "TLorentzVector.h"
+#include "TVector3.h"
+#include "TNtuple.h"
+#include "../../../Utils/.sl53_gcc432/obj/StRoot/StRefMultCorr/StRefMultCorr.h"
+#include "../../../Utils/.sl53_gcc432/obj/StRoot/StAlexPhiMesonEvent/StAlexPhiMesonEvent.h"
+#include "../../../Utils/.sl53_gcc432/obj/StRoot/StAlexV0Event/StAlexV0Event.h"
+
+
+//-------------------------------------------------------------
+// Parameters for re-centering and shift correction
+static TFile *re_centering; // re-centering correction file
+static TFile *shift_method; // shift method correction file
+static TH1F* h_runId_index_rc; // runId <-> index for re-centering
+static TH1F* h_runId_index_rc_inv; // index for re-centering <-> runId
+static Int_t h_Nbins_rc_B;
+static const Int_t n_params = 3;
+static const Int_t n_z_vertex_bins = 10;
+static const Int_t nPsi_EP = 10;
+static const Int_t n_shift_par = 5;
+static TH1F* h_rc_QxQy_etapm_z_vs_index_[6][n_z_vertex_bins][n_params];
+static TH1F* hEP_shift_params[nPsi_EP][n_shift_par];
+//-------------------------------------------------------------
+
+static const    Int_t    nphi_bins = 7; // 12
+static const    Double_t phi_start = 0.0;
+static const    Double_t phi_stop  = TMath::Pi();
+static Double_t delta_phi          = (phi_stop-phi_start)/(2.0*((Double_t)nphi_bins));
+
+static const Int_t n_z_bins = 16;
+static Double_t low_z_bin_range[n_z_bins] = {-40,-75,-65,-55,-45,-35,-25,-15,-5,5,15,25,35,45,55,65};
+static Double_t up_z_bin_range[n_z_bins]  = {40,-65,-55,-45,-35,-25,-15,-5,5,15,25,35,45,55,65,75};
+
+static const    Int_t    npt_bins         = 20;
+static Double_t pt_bin_ranges[npt_bins]   = {0.2,0.4,0.6,0.8,1.0,1.2,1.4,1.6,1.8,2.0,2.2,2.4,2.6,2.8,3.2,3.6,4.0,4.4,4.8,5.2};
+
+static const Int_t n_cuts_var = 5;
+static const Int_t n_cuts = 20; // 10
+static const Int_t n_cuts_SEME = 2*n_cuts; // combined cuts + SE/ME
+static const    Int_t    nep_methods  = 4;   // fEP_method: // 0 = full TPC event plane, phi-weights
+                                             // 1 = eta sub event plane, phi-weights
+                                             // 2 = full TPC event plane, re-centering
+                                             // 3 = eta sub event plane, re-centering
+static const    Int_t    nmult_bins   = 13;  // 4 bins for 18 = 0-80%, 19 = 0-10%, 20 = 10-40%, 21 = 40-80%
+                                             // 9 fine centrality bins, starting with the most peripheral one
+static const    Int_t    nmult_bins4  = 4;  // 4 bins for 18 = 0-80%, 19 = 0-10%, 20 = 10-40%, 21 = 40-80%
+
+static TH1F* hInvMass_pt[2][npt_bins]; // [SE,ME][pt bin]
+static TH1F* hInvMass_pt_miss[2][npt_bins]; // [SE,ME][pt bin] for missidentification
+static TH1F* hInvMass_mult_pt_phi_ep_seme[nmult_bins4][npt_bins][nphi_bins][nep_methods][2];
+static TH1F* hInvMass_mult_pt_seme[nmult_bins][npt_bins][2];
+
+static TNtuple *NTuple_Four_leptons;
+static Float_t Four_leptons_NTDataArray[19];
+
+// For systematic error calculation
+static TH1F* hInvMass_pt_syst[n_cuts_SEME][npt_bins]; // [SE,ME][pt bin]
+static TH1F* hInvMass_pt_miss_syst[n_cuts_SEME][npt_bins]; // [SE,ME][pt bin] for missidentification
+static TH1F* hInvMass_mult_pt_phi_ep_seme_syst[nmult_bins4][npt_bins][nphi_bins][nep_methods][n_cuts_SEME];
+static TH1F* hInvMass_mult_pt_seme_syst[nmult_bins][npt_bins][n_cuts_SEME];
+
+static Int_t erefMult_bin;
+static Int_t erefMult_bin16;
+static const Int_t    nmult_bins_all   = 9;
+static Double_t Event_Plane_resolution[nmult_bins_all][nep_methods];                 // used event plane resolution
+
+//____________________________________________________________________________________________________
+// Class to correct z-vertex dependence of refmult
+class StStrangenessAna {
+  public:
+    StStrangenessAna();
+    virtual ~StStrangenessAna(); /// Default destructor
+
+    // Functions
+    void setInputDir(const TString inputdir);
+    void setAnalysis(Int_t nAnalysis) {eAnalysis = nAnalysis;}
+    void setOutputfile(const TString outputfile);
+    void setStartEvent_SE(const Long64_t StartEvent_SE);
+    void setStopEvent_SE(const Long64_t StopEvent_SE);
+    void setStartEvent_ME(const Long64_t StartEvent_ME);
+    void setStopEvent_ME(const Long64_t StopEvent_ME);
+    void setSEList(const TString iSEList);
+    void setMEList(const TString iMEList);
+    void setBeamTimeNum(Int_t nBeamTimeNum) {eBeamTimeNum = nBeamTimeNum; cout << "Beam time number = " << eBeamTimeNum << endl;}
+    void setEP_method(Int_t nEP_method) {eEP_method = nEP_method; cout << "Event plane method = " << eEP_method << endl;};
+    void setReCenteringFile(TString inrecentfile) {recentfile = inrecentfile; cout << "Re-centering file = " << inrecentfile.Data() << endl;};
+    void setShiftFile(TString inshiftfile) {shiftfile = inshiftfile; cout << "Shift method file = " << inshiftfile.Data() << endl;};
+    void init();
+    void loop();
+    void finalize();
+
+private:
+    // Functions
+    void clear() ; /// Clear all arrays
+
+    // Data members
+    Int_t eBeamTimeNum,eEP_method;
+    Int_t eAnalysis;
+    TString recentfile,shiftfile;
+    TString pinputdir, SEList, MEList;
+    TString poutputfile;
+    TChain* input_SE;
+    TChain* input_ME;
+    Long64_t nentries;
+    TFile* Outputfile;
+    Long64_t nStartEvent_SE, nStopEvent_SE, nStartEvent_ME, nStopEvent_ME;
+    StAlexPhiMesonEvent *alexPhiMeson_event;
+    StAlexPhiMesonTrack *alexPhiMeson_track;
+    StAlexV0Event *alexV0_event;
+    StAlexV0Track *alexV0_track;
+    Long64_t num_events_SE;
+    Long64_t num_events_ME;
+    StRefMultCorr *refmultCorr;
+
+    TString HistName;
+
+    ClassDef(StStrangenessAna, 0)
+};
+#endif
+

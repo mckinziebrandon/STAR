@@ -1,0 +1,28 @@
+#!/bin/bash
+date
+    beamtime=0;
+if [ $# -eq 1 ] 
+then                
+for FILE in `cat $1`
+do
+    echo $FILE
+    cp ./run.csh ./run_dev2$FILE.csh
+    
+    echo -n "root4star -b -q -x 'D0_Analysis_macro.cc(">>run_dev2$FILE.csh
+    echo -n '0,0,90000,"'>>run_dev2$FILE.csh
+    echo -n $FILE>>run_dev2$FILE.csh
+    echo -n '")' >>run_dev2$FILE.csh
+    echo -n "' > log/run_dev2">>run_dev2$FILE.csh
+    echo -n $FILE>>run_dev2$FILE.csh
+    echo ".log">>run_dev2$FILE.csh
+
+    qsub  -hard -l projectio=1,scratchfree=500,h_cpu=2:00:00,h_vmem=0.6G -o log/job_dev2$FILE.log -e log/job_dev2$FILE.err ./run_dev2$FILE.csh
+   
+    mv run_dev2$FILE.csh script/
+
+done
+else
+	echo "**************************************************************************************"
+	echo "one file list as parameter and a suffix"
+        echo "**************************************************************************************" 
+fi

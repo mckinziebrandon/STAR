@@ -1,0 +1,38 @@
+
+void D0_Analysis_macro(Int_t iBeamTimeNum, Long64_t iStartEvent_SE, Long64_t iStopEvent_SE, TString file_list)
+{
+    // Examples to start analysis:
+    // root4star -b -q D0_Analysis_macro.cc\(0,0,90000,\"Split_D0tree_200GeV_run14_preview2_191_200\"\)
+
+    cout << "D0_Analysis started" << endl;
+    cout << "Loading libraries ..." << endl;
+    gSystem->Load("St_base");
+    gSystem->Load("StUtilities");        // new addition 22jul99
+    gSystem ->Load("../../../Utils_run14/.sl64_gcc447/obj/StRoot/StD0Event/StD0Event.so");
+    gSystem ->Load("./.sl64_gcc447/lib/D0_Analysis.so");
+
+    cout << "Constructor ..." << endl;
+    D0_Analysis* D0_Ana = new D0_Analysis();
+
+    TString out_file_name  = "/global/scratch2/sd/bsmckinz/HFT/D0/";
+    
+    //TString out_file_name  = "$SCRATCH/HFT/D0/";
+    out_file_name         += file_list;
+    out_file_name         += "_out.root";
+
+    cout << "out_file_name = " << out_file_name.Data() << endl;
+
+    TString List_dir  = "/global/homes/a/aschmah/STAR/Analysis/HFT/D0_Analysis/File_Lists/";
+    List_dir         += file_list;
+
+    D0_Ana->setAnalysis(0);
+    D0_Ana->setSEList(List_dir.Data());
+    D0_Ana->setInputDir("/project/projectdirs/star/aschmah/D0/");
+    D0_Ana->setOutputfile(out_file_name.Data());
+    D0_Ana->setStopEvent_SE(iStopEvent_SE);
+    D0_Ana->setStartEvent_SE(iStartEvent_SE);
+    D0_Ana->setBeamTimeNum(iBeamTimeNum);
+    D0_Ana->init();
+    D0_Ana->loop();
+    D0_Ana->finalize();
+}

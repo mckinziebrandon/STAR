@@ -1,0 +1,308 @@
+#ifndef __STALEXV0EVENT_H__
+#define __STALEXV0EVENT_H__
+
+#include "TMath.h"
+#include "TObject.h"
+#include "TClonesArray.h"
+
+// A. Schmah 23.11.2011
+
+class StAlexV0Track : public TObject
+{
+private:
+    // Track properties
+    Float_t m2A; // mass2 of particle A
+    Float_t m2B;
+    Float_t m2C;
+    Float_t m2D;
+    Float_t nsA; // nsigma dE/dx of particle A
+    Float_t nsB;
+    Float_t nsC;
+    Float_t nsD;
+    Float_t dcaA; // distance of closest approach of particle A
+    Float_t dcaB;
+    Float_t dcaC;
+    Float_t dcaD;
+    Float_t iQxA; // Q-vector x-component of particle A
+    Float_t iQyA;
+    Float_t iQxB;
+    Float_t iQyB;
+    Float_t iQxC;
+    Float_t iQyC;
+    Float_t iQxD;
+    Float_t iQyD;
+    Float_t etaA;  // pseudo rapidity of particle A
+    Float_t etaB;
+    Float_t etaC;
+    Float_t etaD;
+
+    Float_t InvAB;  // invariant mass of particles A and B
+    Float_t InvCD;  // invariant mass of particles A and B
+    Float_t InvABC; // invariant mass of particles A,B and C
+    Float_t InvABCD; // invariant mass of particles A,B,C and, D
+    Float_t InvAB_miss; // invariant mass of missidentified particles A and B
+    Float_t InvABC_miss; // invariant mass of missidentified particles A, B and C
+    Float_t dcaAB; // distance of closest approach between particles A and B
+    Float_t dcaBC; // distance of closest approach between particles B and C
+    Float_t dcaCD; // distance of closest approach between particles C and D
+    Float_t dcaABC;
+    Float_t VerdistX; // distance between primary and secondary vertex
+    Float_t VerdistY; // distance between primary vertex and point back V0
+    Float_t VerdistX2; // distance between primary and tertiary vertex
+    Float_t VerdistY2; // distance between primary vertex and point back V02
+    Float_t pt; // transverse momentum of particles AB(C)
+    Float_t rap; // rapidity of particles AB(C)
+    Float_t phi; // azimuth angle of particles AB(C)
+    Float_t theta; // polar angle of particles AB(C)
+    Float_t Psi_ep; // event plane angle full TPC
+    Float_t Psi_ep_eta; // event plane angle eta gap
+    Float_t Psi_diff_ME; // event plane difference angle for mixed event
+    Float_t scal_prod; // scalar product of vertex diff vector and momentum vector
+    Float_t scal_prod2; // scalar product of vertex diff vector and momentum vector
+
+public:
+    StAlexV0Track() :
+        m2A(-1),m2B(-1),m2C(-1),m2D(-1),nsA(-1),nsB(-1),nsC(-1),nsD(-1),dcaA(-1),dcaB(-1),dcaC(-1),dcaD(-1),iQxA(-1),iQyA(-1),iQxB(-1),iQyB(-1),
+        iQxC(-1),iQyC(-1),iQxD(-1),iQyD(-1),etaA(-1),etaB(-1),etaC(-1),etaD(-1),InvAB(-1),InvCD(-1),InvABC(-1),InvABCD(-1),InvAB_miss(-1),InvABC_miss(-1),
+        dcaAB(-1), dcaBC(-1), dcaCD(-1),dcaABC(-1),VerdistX(-1),VerdistY(-1),VerdistX2(-1),VerdistY2(-1),pt(-1),
+        rap(-1),phi(-1),theta(-1),Psi_ep(-1),Psi_ep_eta(-1),Psi_diff_ME(-1),scal_prod(-1),scal_prod2(-1)
+    {
+    }
+        ~StAlexV0Track() {}
+
+        // setters
+        void setm2A(Float_t f)                     { m2A = f;         }
+        void setm2B(Float_t f)                     { m2B = f;         }
+        void setm2C(Float_t f)                     { m2C = f;         }
+        void setm2D(Float_t f)                     { m2D = f;         }
+        void setnsA(Float_t f)                     { nsA = f;         }
+        void setnsB(Float_t f)                     { nsB = f;         }
+        void setnsC(Float_t f)                     { nsC = f;         }
+        void setnsD(Float_t f)                     { nsD = f;         }
+        void setdcaA(Float_t f)                    { dcaA = f;        }
+        void setdcaB(Float_t f)                    { dcaB = f;        }
+        void setdcaC(Float_t f)                    { dcaC = f;        }
+        void setdcaD(Float_t f)                    { dcaD = f;        }
+        void setiQxA(Float_t f)                    { iQxA = f;        }
+        void setiQyA(Float_t f)                    { iQyA = f;        }
+        void setiQxB(Float_t f)                    { iQxB = f;        }
+        void setiQyB(Float_t f)                    { iQyB = f;        }
+        void setiQxC(Float_t f)                    { iQxC = f;        }
+        void setiQyC(Float_t f)                    { iQyC = f;        }
+        void setiQxD(Float_t f)                    { iQxD = f;        }
+        void setiQyD(Float_t f)                    { iQyD = f;        }
+        void setetaA(Float_t f)                    { etaA = f;        }
+        void setetaB(Float_t f)                    { etaB = f;        }
+        void setetaC(Float_t f)                    { etaC = f;        }
+        void setetaD(Float_t f)                    { etaD = f;        }
+        void setInvAB(Float_t f)                   { InvAB = f;       }
+        void setInvCD(Float_t f)                   { InvCD = f;       }
+        void setInvABC(Float_t f)                  { InvABC = f;      }
+        void setInvABCD(Float_t f)                 { InvABCD = f;     }
+        void setInvAB_miss(Float_t f)              { InvAB_miss = f;  }
+        void setInvABC_miss(Float_t f)             { InvABC_miss = f; }
+        void setdcaAB(Float_t f)                   { dcaAB = f;       }
+        void setdcaBC(Float_t f)                   { dcaBC = f;       }
+        void setdcaCD(Float_t f)                   { dcaCD = f;       }
+        void setdcaABC(Float_t f)                  { dcaABC = f;      }
+        void setVerdistX(Float_t f)                { VerdistX = f;    }
+        void setVerdistY(Float_t f)                { VerdistY = f;    }
+        void setVerdistX2(Float_t f)               { VerdistX2 = f;   }
+        void setVerdistY2(Float_t f)               { VerdistY2 = f;   }
+        void setpt(Float_t f)                      { pt = f;          }
+        void setrap(Float_t f)                     { rap = f;         }
+        void setphi(Float_t f)                     { phi = f;         }
+        void settheta(Float_t f)                   { theta = f;       }
+        void setPsi_ep(Float_t f)                  { Psi_ep = f;      }
+        void setPsi_ep_eta(Float_t f)              { Psi_ep_eta = f;  }
+        void setPsi_diff_ME(Float_t f)             { Psi_diff_ME = f; }
+        void setscal_prod(Float_t f)               { scal_prod = f;   }
+        void setscal_prod2(Float_t f)              { scal_prod2 = f;  }
+
+        // getters
+        Float_t getm2A() const                     { return m2A;         }
+        Float_t getm2B() const                     { return m2B;         }
+        Float_t getm2C() const                     { return m2C;         }
+        Float_t getm2D() const                     { return m2D;         }
+        Float_t getnsA() const                     { return nsA;         }
+        Float_t getnsB() const                     { return nsB;         }
+        Float_t getnsC() const                     { return nsC;         }
+        Float_t getnsD() const                     { return nsD;         }
+        Float_t getdcaA() const                    { return dcaA;        }
+        Float_t getdcaB() const                    { return dcaB;        }
+        Float_t getdcaC() const                    { return dcaC;        }
+        Float_t getdcaD() const                    { return dcaD;        }
+        Float_t getiQxA() const                    { return iQxA;        }
+        Float_t getiQyA() const                    { return iQyA;        }
+        Float_t getiQxB() const                    { return iQxB;        }
+        Float_t getiQyB() const                    { return iQyB;        }
+        Float_t getiQxC() const                    { return iQxC;        }
+        Float_t getiQyC() const                    { return iQyC;        }
+        Float_t getiQxD() const                    { return iQxD;        }
+        Float_t getiQyD() const                    { return iQyD;        }
+        Float_t getetaA() const                    { return etaA;        }
+        Float_t getetaB() const                    { return etaB;        }
+        Float_t getetaC() const                    { return etaC;        }
+        Float_t getetaD() const                    { return etaD;        }
+        Float_t getInvAB() const                   { return InvAB;       }
+        Float_t getInvCD() const                   { return InvCD;       }
+        Float_t getInvABC() const                  { return InvABC;      }
+        Float_t getInvABCD() const                 { return InvABCD;     }
+        Float_t getInvAB_miss() const              { return InvAB_miss;  }
+        Float_t getInvABC_miss() const             { return InvABC_miss; }
+        Float_t getdcaAB() const                   { return dcaAB;       }
+        Float_t getdcaBC() const                   { return dcaBC;       }
+        Float_t getdcaCD() const                   { return dcaCD;       }
+        Float_t getdcaABC() const                  { return dcaABC;      }
+        Float_t getVerdistX() const                { return VerdistX;    }
+        Float_t getVerdistY() const                { return VerdistY;    }
+        Float_t getVerdistX2() const               { return VerdistX2;   }
+        Float_t getVerdistY2() const               { return VerdistY2;   }
+        Float_t getpt() const                      { return pt;          }
+        Float_t getrap() const                     { return rap;         }
+        Float_t getphi() const                     { return phi;         }
+        Float_t gettheta() const                   { return theta;       }
+        Float_t getPsi_ep() const                  { return Psi_ep;      }
+        Float_t getPsi_ep_eta() const              { return Psi_ep_eta;  }
+        Float_t getPsi_diff_ME() const             { return Psi_diff_ME; }
+        Float_t getscal_prod() const               { return scal_prod;   }
+        Float_t getscal_prod2() const              { return scal_prod2;  }
+
+        ClassDef(StAlexV0Track,1)  // A simple track of a particle
+};
+
+class StAlexV0Event : public TObject
+{
+private:
+    Float_t x;
+    Float_t y;
+    Float_t z;
+    Int_t   id;
+    Float_t mult;
+    Int_t   n_prim;
+    Int_t   n_non_prim;
+    Int_t   n_tof_prim;
+    Float_t EP_Qx_eta_pos_ptw;
+    Float_t EP_Qy_eta_pos_ptw;
+    Float_t EP_Qx_eta_neg_ptw;
+    Float_t EP_Qy_eta_neg_ptw;
+    Float_t EP_Qx_ptw;
+    Float_t EP_Qy_ptw;
+    Int_t   Qtracks_eta_pos;
+    Int_t   Qtracks_eta_neg;
+    Int_t   Qtracks_full;
+
+    Float_t ZDCx;
+    Float_t BBCx;
+    Float_t vzVpd;
+
+    UShort_t      fNumTracks;
+
+    TClonesArray* fTracks;      //->
+
+public:
+    StAlexV0Event() :
+        x(-1),y(-1),z(-1),id(-1),mult(0),n_prim(0),n_non_prim(0),
+        n_tof_prim(0),EP_Qx_eta_pos_ptw(-1),EP_Qy_eta_pos_ptw(-1),EP_Qx_eta_neg_ptw(-1),EP_Qy_eta_neg_ptw(-1),
+        EP_Qx_ptw(-1),EP_Qy_ptw(-1),Qtracks_eta_pos(0),Qtracks_eta_neg(0),Qtracks_full(0),ZDCx(-1),BBCx(-1),vzVpd(-1),fNumTracks(0)
+    {
+        fTracks      = new TClonesArray( "StAlexV0Track", 10 );
+    }
+        ~StAlexV0Event()
+        {
+            delete fTracks;
+            fTracks = NULL;
+        }
+
+        void       setx(Float_t r)                    { x = r;                         }
+        Float_t    getx() const                       { return x;                      }
+
+        void       sety(Float_t r)                    { y = r;                         }
+        Float_t    gety() const                       { return y;                      }
+
+        void       setz(Float_t r)                    { z = r;                         }
+        Float_t    getz() const                       { return z;                      }
+
+        void       setid(Int_t  r)                    { id = r;                        }
+        Int_t      getid() const                      { return id;                     }
+
+        void       setmult(Float_t r)                 { mult = r;                      }
+        Float_t    getmult() const                    { return mult;                   }
+
+        void       setn_prim(Int_t r)                 { n_prim = r;                    }
+        Int_t      getn_prim() const                  { return n_prim;                 }
+
+        void       setn_non_prim(Int_t r)             { n_non_prim = r;                }
+        Int_t      getn_non_prim() const              { return n_non_prim;             }
+
+        void       setn_tof_prim(Int_t r)             { n_tof_prim = r;                }
+        Int_t      getn_tof_prim() const              { return n_tof_prim;             }
+
+        void       setEP_Qx_eta_pos_ptw(Float_t r)    { EP_Qx_eta_pos_ptw = r;         }
+        Float_t    getEP_Qx_eta_pos_ptw() const       { return EP_Qx_eta_pos_ptw;      }
+
+        void       setEP_Qy_eta_pos_ptw(Float_t r)    { EP_Qy_eta_pos_ptw = r;         }
+        Float_t    getEP_Qy_eta_pos_ptw() const       { return EP_Qy_eta_pos_ptw;      }
+
+        void       setEP_Qx_eta_neg_ptw(Float_t r)    { EP_Qx_eta_neg_ptw = r;         }
+        Float_t    getEP_Qx_eta_neg_ptw() const       { return EP_Qx_eta_neg_ptw;      }
+
+        void       setEP_Qy_eta_neg_ptw(Float_t r)    { EP_Qy_eta_neg_ptw = r;         }
+        Float_t    getEP_Qy_eta_neg_ptw() const       { return EP_Qy_eta_neg_ptw;      }
+
+        void       setEP_Qx_ptw(Float_t r)            { EP_Qx_ptw = r;                 }
+        Float_t    getEP_Qx_ptw() const               { return EP_Qx_ptw;              }
+
+        void       setEP_Qy_ptw(Float_t r)            { EP_Qy_ptw = r;                 }
+        Float_t    getEP_Qy_ptw() const               { return EP_Qy_ptw;              }
+
+        void       setQtracks_eta_pos(Int_t r)        { Qtracks_eta_pos = r;           }
+        Int_t      getQtracks_eta_pos() const         { return Qtracks_eta_pos;        }
+
+        void       setQtracks_eta_neg(Int_t r)        { Qtracks_eta_neg = r;           }
+        Int_t      getQtracks_eta_neg() const         { return Qtracks_eta_neg;        }
+
+        void       setQtracks_full(Int_t r)           { Qtracks_full = r;              }
+        Int_t      getQtracks_full() const            { return Qtracks_full;           }
+
+        void       setZDCx(Float_t r)                 { ZDCx = r;                      }
+        Float_t    getZDCx() const                    { return ZDCx;                   }
+
+        void       setBBCx(Float_t r)                 { BBCx = r;                      }
+        Float_t    getBBCx() const                    { return BBCx;                   }
+
+        void       setvzVpd(Float_t r)                { vzVpd = r;                     }
+        Float_t    getvzVpd() const                   { return vzVpd;                  }
+
+        StAlexV0Track* createTrack()
+        {
+            if (fNumTracks == fTracks->GetSize())
+                fTracks->Expand( fNumTracks + 10 );
+            if (fNumTracks >= 10000)
+            {
+                Fatal( "StAlexV0Event::createTrack()", "ERROR: Too many tracks (>1000)!" );
+                exit( 2 );
+            }
+
+            new((*fTracks)[fNumTracks++]) StAlexV0Track;
+            return (StAlexV0Track*)((*fTracks)[fNumTracks - 1]);
+        }
+        void clearTrackList()
+        {
+            fNumTracks   = 0;
+            fTracks      ->Clear();
+        }
+        UShort_t getNumTracks() const
+        {
+            return fNumTracks;
+        }
+        StAlexV0Track* getTrack(UShort_t i) const
+        {
+            return i < fNumTracks ? (StAlexV0Track*)((*fTracks)[i]) : NULL;
+        }
+
+        ClassDef(StAlexV0Event,1)  // A simple event compiled of tracks
+};
+
+
+#endif // __STALEXEVENT_H__

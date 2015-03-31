@@ -1,0 +1,1 @@
+../../../../StRoot/StPicoDstMaker/StPicoMtdPidTraits.h
