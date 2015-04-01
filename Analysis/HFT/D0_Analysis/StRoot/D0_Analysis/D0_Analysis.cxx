@@ -29,6 +29,7 @@ static TString HistName;
 const Int_t N_h_InvMass    = 6;
 const Int_t N_h_InvMass_pt = 6;
 static TH1D* h_InvMass[N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass_pt];
+static TH1D* special_h_InvMass = new TH1D("special_h_InvMass", "special_h_InvMass", 100, 1.4, 2.4);
 
 
 //____________________________________________________________________________________________________
@@ -110,6 +111,8 @@ void D0_Analysis::init()
 			h_InvMass[A][B][X][Y][AB][i_hist_pt] = 
 				new TH1D(HistName.Data(),HistName.Data(),100,1.4,2.4);
 	}}}}}}
+
+
 //----------------------------------------------------------------------------------------------------
 
 
@@ -335,14 +338,24 @@ void D0_Analysis::loop()
             dcaAB_cut.push_back(0.0185 - i * 0.0033);	// 185 - 20 microns 
         }
 
+        /* checking vector elements
+        for(Int_t i = 0; i < N_h_InvMass; i++){
+            std::cout << "dcaA_cut[" << i << "] = " << dcaA_cut[i];
+            std::cout << ";; dcaB_cut[" << i << "] = " << dcaB_cut[i];
+            std::cout << ";; dcaAB_cut[" << i << "] = " << dcaA_cut[i];
+            std::cout << ";; VerdistX_cut[" << i << "] = " << VerdistX_cut[i];
+            std::cout << ";; VerdistY_cut[" << i << "] = " << VerdistY_cut[i] << endl;
+        }
+        */
+
         // ensure all values are within cut range
         Bool_t in_cut_range = true;
         if(
-            fabs(dcaA) < dcaA_cut.front()   || fabs(dcaA) > dcaA_cut.back() ||
-            fabs(dcaB) < dcaB_cut.front()   || fabs(dcaB) > dcaB_cut.back() ||
-            dcaAB      > dcaAB_cut.front()  || dcaAB      < dcaAB_cut.back()||
-            VerdistX   < VerdistX_cut.front()   || VerdistX   > VerdistX_cut.back() ||
-            VerdistY   > VerdistY_cut.front()   || VerdistY   < VerdistY_cut.back() ||
+            fabs(dcaA) < dcaA_cut.front()   ||
+            fabs(dcaB) < dcaB_cut.front()   ||
+            dcaAB      > dcaAB_cut.front()  || 
+            VerdistX   < VerdistX_cut.front()   || 
+            VerdistY   > VerdistY_cut.front()   || 
             p_t  > pt_cut.back()
         )   in_cut_range = false;
 
@@ -360,13 +373,26 @@ void D0_Analysis::loop()
                 if (dcaAB      > dcaAB_cut[AB]) break;
             for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
                 if(p_t  < pt_cut[i_hist_pt+1] &&
-                    p_t > pt_cut[i_hist_pt] ){
+                    p_t >= pt_cut[i_hist_pt] ){
                         h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
                         break;
                 }
 
             }}}}}}
         }
+
+        // fill special hist
+        if(
+            fabs(dcaA) > 0.004  &&
+            fabs(dcaB) > 0.004  &&
+            dcaAB      < 0.01  &&
+            VerdistX   > 0.02   &&
+            VerdistY   < 0.01  &&
+            fabs(qpA)  > 0.8    &&
+            fabs(qpB)  > 0.8 
+            ){
+                special_h_InvMass->Fill(InvAB);
+            }
 
                 } // end of track loop
             }
@@ -388,6 +414,7 @@ void D0_Analysis::finalize()
 	cout << "" << endl;
 	cout << "Write output" << endl;
 	Outputfile      ->cd();
+    special_h_InvMass->Write();
 	Outputfile->mkdir("h_InvMass");
 	Outputfile->cd("h_InvMass");
 
