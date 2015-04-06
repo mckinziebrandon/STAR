@@ -1,3 +1,14 @@
+/*----------------------------------------------------------------------------
+
+File Name:      D0_Analysis.cxx
+Authors:        Alexander Schmah, Brandon McKinzie
+Description:    This file applies topological cuts to PicoDSTs. 
+Input:          Batch files for either same-event or mixed-event.
+Output:         Thousands of histograms corresponding to every possible 
+                combination of topological cuts.
+
+----------------------------------------------------------------------------*/
+
 //#include <assert.h>
 #include <fstream>
 #include <string>
@@ -325,8 +336,9 @@ void D0_Analysis::loop()
                     VerdistX                = D0_track->getVerdistX(); // distance between primary and decay vertex
                     VerdistY                = D0_track->getVerdistY(); // distance of closest approach of mother particle to primary vertex
                     dcaAB                   = D0_track->getdcaAB(); // distance of closest approach between Kaon and Pion
+        Double_t    sin_theta               = VerdistY / VerdistX; 
 
-		std::vector<Double_t> dcaA_cut, dcaB_cut, dcaAB_cut, VerdistX_cut, VerdistY_cut, pt_cut(N_h_InvMass_pt);
+		std::vector<Double_t> sin_theta_cut, dcaA_cut, dcaB_cut, dcaAB_cut, VerdistX_cut, VerdistY_cut, pt_cut(N_h_InvMass_pt);
         pt_cut = {0, 0.5, 1, 1.5, 2.5, 5, 10};
 
 		// initialize vectors with cut ranges
@@ -334,7 +346,8 @@ void D0_Analysis::loop()
             dcaA_cut.push_back(0.002 + i * 0.0033);		// 20 - 185 microns
             dcaB_cut.push_back(0.002 + i * 0.0033);		// 20 - 185 microns
             VerdistX_cut.push_back(0.005 + i * 0.0083);	// 50 - 465 microns
-            VerdistY_cut.push_back(0.0185 - i * 0.0033);// 185 - 20 microns
+            sin_theta_cut.push_back(0.03 - i * 0.005);  // 0.03 - 0.005
+//          VerdistY_cut.push_back(0.0185 - i * 0.0033);// 185 - 20 microns
             dcaAB_cut.push_back(0.0185 - i * 0.0033);	// 185 - 20 microns 
         }
 
@@ -351,45 +364,52 @@ void D0_Analysis::loop()
         // ensure all values are within cut range
         Bool_t in_cut_range = true;
         if(
-            fabs(dcaA) < dcaA_cut.front()   ||
-            fabs(dcaB) < dcaB_cut.front()   ||
-            dcaAB      > dcaAB_cut.front()  || 
-            VerdistX   < VerdistX_cut.front()   || 
-            VerdistY   > VerdistY_cut.front()   || 
-            p_t  > pt_cut.back()
-        )   in_cut_range = false;
+            fabs(dcaA)  < dcaA_cut.front()          ||
+            fabs(dcaB)  < dcaB_cut.front()          ||
+            dcaAB       > dcaAB_cut.front()         || 
+            VerdistX    < VerdistX_cut.front()      || 
+            sin_theta   > sin_theta_cut.front()     ||
+//          VerdistY    > VerdistY_cut.front()      || 
+            p_t         > pt_cut.back()             ||
+            ((fabs(qpA) > 0.60 && m2A < -10))       ||  // kaon cut
+            (fabs(qpA)  < 0.5 && fabs(qpB) < 0.5)   
+//          fabs(nsA)   < 2
+          )   
+            in_cut_range = false;
+        
 
         // loop counter values are indices of cut vectors
         if (in_cut_range){
             for(Int_t A = 0; A < N_h_InvMass; A++){
-                if (fabs(dcaA) < dcaA_cut[A]) break;
-            for(Int_t B = 0; B < N_h_InvMass; B++){
-                if (fabs(dcaB) < dcaB_cut[B]) break;
-            for(Int_t X = 0; X < N_h_InvMass; X++){
-                if (VerdistX   < VerdistX_cut[X]) break;
-            for(Int_t Y = 0; Y < N_h_InvMass; Y++){
-                if (VerdistY   > VerdistY_cut[Y]) break;
-            for(Int_t AB = 0; AB < N_h_InvMass; AB++){
-                if (dcaAB      > dcaAB_cut[AB]) break;
-            for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-                if(p_t  < pt_cut[i_hist_pt+1] &&
-                    p_t >= pt_cut[i_hist_pt] ){
-                        h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
-                        break;
-                }
+                if (fabs(dcaA) < dcaA_cut[A])       break;
+                for(Int_t B = 0; B < N_h_InvMass; B++){
+                    if (fabs(dcaB) < dcaB_cut[B])       break;
+                    for(Int_t X = 0; X < N_h_InvMass; X++){
+                        if (VerdistX   < VerdistX_cut[X])   break;
+                        for(Int_t Y = 0; Y < N_h_InvMass; Y++){
+                            if (sin_theta  > sin_theta_cut[Y])  break;
+            //              if (VerdistY   > VerdistY_cut[Y]) break;
+                                for(Int_t AB = 0; AB < N_h_InvMass; AB++){
+                                    if (dcaAB      > dcaAB_cut[AB])     break;
+                                    for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+                                        if( p_t  < pt_cut[i_hist_pt+1] &&
+                                            p_t >= pt_cut[i_hist_pt] ){
+                                                h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
+                                                break;
+                                            }
 
             }}}}}}
         }
 
         // fill special hist
         if(
-            fabs(dcaA) > 0.004  &&
-            fabs(dcaB) > 0.004  &&
-            dcaAB      < 0.01  &&
-            VerdistX   > 0.02   &&
-            VerdistY   < 0.01  &&
-            fabs(qpA)  > 0.8    &&
-            fabs(qpB)  > 0.8 
+            fabs(dcaA) > 0.008  &&
+            fabs(dcaB) > 0.008  &&
+            dcaAB      < 0.005  &&
+            VerdistX   > 0.04   &&
+            VerdistY   < 0.004  &&
+            fabs(qpA)  > 1.5    &&
+            fabs(qpB)  > 1.5 
             ){
                 special_h_InvMass->Fill(InvAB);
             }
