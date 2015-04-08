@@ -41,6 +41,7 @@ const Int_t N_h_InvMass    = 6;
 const Int_t N_h_InvMass_pt = 6;
 static TH1D* h_InvMass[N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass_pt];
 static TH1D* special_h_InvMass = new TH1D("special_h_InvMass", "special_h_InvMass", 100, 1.4, 2.4);
+static TH1D* special_h_InvMass_2 = new TH1D("special_h_InvMass_2", "special_h_InvMass_2", 100, 1.4, 2.4);
 
 
 //____________________________________________________________________________________________________
@@ -67,21 +68,25 @@ void D0_Analysis::setInputDir(const TString inputdir)
     pinputdir = inputdir.Copy();
     cout << "Input directory was set to: " << pinputdir.Data() << endl;
 }
+
 void D0_Analysis::setOutputfile(const TString outputfile)
 {
     poutputfile = outputfile.Copy();
     cout << "Output file was set to: " << poutputfile.Data() << endl;
 }
+
 void D0_Analysis::setSEList(const TString iSEList)
 {
     SEList = iSEList.Copy();
     cout << "Same event list was set to: " << SEList.Data() << endl;
 }
+
 void D0_Analysis::setStopEvent_SE(const Long64_t StopEvent_SE)
 {
     nStopEvent_SE = StopEvent_SE;
     cout << "nStopEvent_SE = " << nStopEvent_SE << endl;
 }
+
 void D0_Analysis::setStartEvent_SE(const Long64_t StartEvent_SE)
 {
     nStartEvent_SE = StartEvent_SE;
@@ -122,23 +127,21 @@ void D0_Analysis::init()
 			h_InvMass[A][B][X][Y][AB][i_hist_pt] = 
 				new TH1D(HistName.Data(),HistName.Data(),100,1.4,2.4);
 	}}}}}}
-
-
-//----------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------
 
 
 
     //----------------------------------------------------------------------------------------------------
     // Same event input
-    if (!SEList.IsNull())   // if input file is ok
+    if (!SEList.IsNull())       // if input file is ok
     {
         cout << "Open same event file list " << SEList << endl;
-        ifstream in(SEList);  // input stream
+        ifstream in(SEList);    // input stream
         if(in)
         {
             cout << "file list is ok" << endl;
             input_SE  = new TChain( D0_TREE, D0_TREE );
-            char str[255];       // char array for each file name
+            char str[255];      // char array for each file name
             Long64_t entries_save = 0;
             while(in)
             {
@@ -150,7 +153,8 @@ void D0_Analysis::init()
                     addfile = pinputdir+addfile;
                     input_SE ->AddFile(addfile.Data(),-1, D0_TREE );
                     Long64_t file_entries = input_SE->GetEntries();
-                    cout << "File added to data chain: " << addfile.Data() << " with " << (file_entries-entries_save) << " entries" << endl;
+                    cout << "File added to data chain: " << addfile.Data(); 
+                    cout << " with " << (file_entries-entries_save) << " entries" << endl;
                     entries_save = file_entries;
                 }
             }
@@ -161,11 +165,12 @@ void D0_Analysis::init()
             SE_input_flag = 0;
         }
     }
+
     // Set the input tree
     if (SE_input_flag == 1 && !input_SE->GetBranch( D0_BRANCH ))
     {
         cerr << "ERROR: Could not find branch '"
-            << D0_BRANCH << "'in tree!" << endl;
+             << D0_BRANCH << "'in tree!" << endl;
     }
 
     D0_event = new StD0Event();
@@ -191,26 +196,26 @@ void D0_Analysis::loop()
 {
     //--------------------------------
     // Track properties
-    Float_t m2A; // mass2 of particle A
+    Float_t m2A;    // mass2 of particle A
     Float_t m2B;
-    Float_t nsA; // nsigma dE/dx of particle A
+    Float_t nsA;    // nsigma dE/dx of particle A
     Float_t nsB;
-    Float_t dcaA; // distance of closest approach of particle A
+    Float_t dcaA;   // distance of closest approach of particle A
     Float_t dcaB;
-    Float_t iQxA; // Q-vector x-component of particle A
+    Float_t iQxA;   // Q-vector x-component of particle A
     Float_t iQyA;
     Float_t iQxB;
     Float_t iQyB;
-    Float_t etaA;  // pseudo rapidity of particle A
+    Float_t etaA;   // pseudo rapidity of particle A
     Float_t etaB;
 
     Float_t InvAB;  // invariant mass of particles A and B
-    Float_t p_t; // transverse momentum of particles AB(C)
-    Float_t rap; // rapidity of particles AB(C)
-    Float_t phi; // azimuth angle of particles AB(C)
-    Float_t theta; // polar angle of particles AB(C)
+    Float_t p_t;    // transverse momentum of particles AB(C)
+    Float_t rap;    // rapidity of particles AB(C)
+    Float_t phi;    // azimuth angle of particles AB(C)
+    Float_t theta;  // polar angle of particles AB(C)
 
-    Float_t qpA; // momentum times charge
+    Float_t qpA;    // momentum times charge
     Float_t qpB;
 
     Float_t VerdistX;
@@ -258,8 +263,9 @@ void D0_Analysis::loop()
             cout << "------------------- Start looping: Same event -------------------" << endl;
             start_event_use = nStartEvent_SE;
             stop_event_use  = nStopEvent_SE;
-            cout << "start_event_use = " << start_event_use << ", stop_event_use = " << stop_event_use << endl;
-            input_SE->GetEntry( 0 ); // For unknown reasons root doesn't like it if someone starts to read a file not from the 0 entry
+            cout << "start_event_use = " << start_event_use; 
+            cout << ", stop_event_use = " << stop_event_use << endl;
+            input_SE->GetEntry( 0 ); // root doesn't like it if someone starts to read a file not from the 0 entry
         }
 
         cout << "SE_ME_loop = " << SE_ME_loop << ", start_event_use = " << start_event_use << ", stop_event_use = " << stop_event_use << ", SE_input_flag = " << SE_input_flag << endl;
@@ -337,29 +343,22 @@ void D0_Analysis::loop()
                     VerdistY                = D0_track->getVerdistY(); // distance of closest approach of mother particle to primary vertex
                     dcaAB                   = D0_track->getdcaAB(); // distance of closest approach between Kaon and Pion
         Double_t    sin_theta               = VerdistY / VerdistX; 
+                 if(sin_theta > 1)          continue;
+        Double_t    cos_theta               = TMath::Sqrt(1 - sin_theta * sin_theta);
 
-		std::vector<Double_t> sin_theta_cut, dcaA_cut, dcaB_cut, dcaAB_cut, VerdistX_cut, VerdistY_cut, pt_cut(N_h_InvMass_pt);
+		std::vector<Double_t> cos_theta_cut, dcaA_cut, dcaB_cut, dcaAB_cut, VerdistX_cut, VerdistY_cut, pt_cut(N_h_InvMass_pt);
         pt_cut = {0, 0.5, 1, 1.5, 2.5, 5, 10};
 
 		// initialize vectors with cut ranges
-        for(Int_t i = 0; i < N_h_InvMass; i++){
+        for(Int_t i = 0; i < N_h_InvMass; i++)
+        {
             dcaA_cut.push_back(0.002 + i * 0.0033);		// 20 - 185 microns
             dcaB_cut.push_back(0.002 + i * 0.0033);		// 20 - 185 microns
             VerdistX_cut.push_back(0.005 + i * 0.0083);	// 50 - 465 microns
-            sin_theta_cut.push_back(0.03 - i * 0.005);  // 0.03 - 0.005
+            cos_theta_cut.push_back(0.98 + i * 0.0035); // 0.98 - 0.9975
 //          VerdistY_cut.push_back(0.0185 - i * 0.0033);// 185 - 20 microns
             dcaAB_cut.push_back(0.0185 - i * 0.0033);	// 185 - 20 microns 
         }
-
-        /* checking vector elements
-        for(Int_t i = 0; i < N_h_InvMass; i++){
-            std::cout << "dcaA_cut[" << i << "] = " << dcaA_cut[i];
-            std::cout << ";; dcaB_cut[" << i << "] = " << dcaB_cut[i];
-            std::cout << ";; dcaAB_cut[" << i << "] = " << dcaA_cut[i];
-            std::cout << ";; VerdistX_cut[" << i << "] = " << VerdistX_cut[i];
-            std::cout << ";; VerdistY_cut[" << i << "] = " << VerdistY_cut[i] << endl;
-        }
-        */
 
         // ensure all values are within cut range
         Bool_t in_cut_range = true;
@@ -368,54 +367,74 @@ void D0_Analysis::loop()
             fabs(dcaB)  < dcaB_cut.front()          ||
             dcaAB       > dcaAB_cut.front()         || 
             VerdistX    < VerdistX_cut.front()      || 
-            sin_theta   > sin_theta_cut.front()     ||
+            cos_theta   < cos_theta_cut.front()     ||
 //          VerdistY    > VerdistY_cut.front()      || 
             p_t         > pt_cut.back()             ||
             ((fabs(qpA) > 0.60 && m2A < -10))       ||  // kaon cut
-            (fabs(qpA)  < 0.5 && fabs(qpB) < 0.5)   
+            (fabs(qpA)  < 0.9 || fabs(qpB) < 0.9)   
 //          fabs(nsA)   < 2
           )   
             in_cut_range = false;
         
 
         // loop counter values are indices of cut vectors
-        if (in_cut_range){
-            for(Int_t A = 0; A < N_h_InvMass; A++){
+        if (in_cut_range)
+        {
+            for(Int_t A = 0; A < N_h_InvMass; A++)
+            {
                 if (fabs(dcaA) < dcaA_cut[A])       break;
-                for(Int_t B = 0; B < N_h_InvMass; B++){
+                for(Int_t B = 0; B < N_h_InvMass; B++)
+                {
                     if (fabs(dcaB) < dcaB_cut[B])       break;
-                    for(Int_t X = 0; X < N_h_InvMass; X++){
+                    for(Int_t X = 0; X < N_h_InvMass; X++)
+                    {
                         if (VerdistX   < VerdistX_cut[X])   break;
-                        for(Int_t Y = 0; Y < N_h_InvMass; Y++){
-                            if (sin_theta  > sin_theta_cut[Y])  break;
+                        for(Int_t Y = 0; Y < N_h_InvMass; Y++)
+                        {
+                            if (cos_theta  < cos_theta_cut[Y])  break;
             //              if (VerdistY   > VerdistY_cut[Y]) break;
-                                for(Int_t AB = 0; AB < N_h_InvMass; AB++){
-                                    if (dcaAB      > dcaAB_cut[AB])     break;
-                                    for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-                                        if( p_t  < pt_cut[i_hist_pt+1] &&
-                                            p_t >= pt_cut[i_hist_pt] ){
-                                                h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
-                                                break;
-                                            }
-
-            }}}}}}
+                            for(Int_t AB = 0; AB < N_h_InvMass; AB++)
+                            {
+                                if (dcaAB      > dcaAB_cut[AB])     break;
+                                for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
+                                {
+                                    if(p_t < pt_cut[i_hist_pt+1] && p_t >= pt_cut[i_hist_pt])
+                                        {
+                                            h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
+                                            break;
+                                        }
+                                }
+                            }
+                        }   
+                    }
+                }
+            }
         }
 
         // fill special hist
-        if(
-            fabs(dcaA) > 0.008  &&
+        if( fabs(dcaA) > 0.008  &&
             fabs(dcaB) > 0.008  &&
             dcaAB      < 0.005  &&
             VerdistX   > 0.04   &&
             VerdistY   < 0.004  &&
             fabs(qpA)  > 1.5    &&
-            fabs(qpB)  > 1.5 
-            ){
+            fabs(qpB)  > 1.5 )
+            {
                 special_h_InvMass->Fill(InvAB);
             }
 
-                } // end of track loop
-            }
+        if( fabs(dcaA) > 0.008  &&
+            fabs(dcaB) > 0.008  &&
+            dcaAB      < 0.005  &&
+            cos_theta  > 0.995  && // cos(theta) > 0.995
+            fabs(qpA)  > 1.2    &&
+            fabs(qpB)  > 1.2 )
+            {
+                special_h_InvMass_2->Fill(InvAB);
+            } 
+        
+
+            }}// end of track loop
             //----------------------------------------------------------------------------------------------------
 
         } // end of event loop
@@ -426,7 +445,7 @@ void D0_Analysis::loop()
     cout << "---------------------------------------------------------------------" << endl;
 
 
-}
+}   // end D0_Analysis::loop()
 
 void D0_Analysis::finalize()
 {
@@ -435,32 +454,40 @@ void D0_Analysis::finalize()
 	cout << "Write output" << endl;
 	Outputfile      ->cd();
     special_h_InvMass->Write();
+    special_h_InvMass_2->Write();
 	Outputfile->mkdir("h_InvMass");
 	Outputfile->cd("h_InvMass");
 
     Int_t n_histograms = 0;
-	// it seems pretty inefficient to do all this looping again . . .
-	for(Int_t A = 0; A < N_h_InvMass; A++){
+	for(Int_t A = 0; A < N_h_InvMass; A++)
+    {
         std::cout << "A = " << A << endl;
-	for(Int_t B = 0; B < N_h_InvMass; B++){
-        std::cout << "B = " << B << endl;
-	for(Int_t X = 0; X < N_h_InvMass; X++){
-	for(Int_t Y = 0; Y < N_h_InvMass; Y++){
-	for(Int_t AB = 0; AB < N_h_InvMass; AB++){
-	for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
-	{
-		    h_InvMass[A][B][X][Y][AB][i_hist_pt]->Write();
-            n_histograms += 1;
+	    for(Int_t B = 0; B < N_h_InvMass; B++)
+        {
+            std::cout << "B = " << B << endl;
+	        for(Int_t X = 0; X < N_h_InvMass; X++)
+            {
+	            for(Int_t Y = 0; Y < N_h_InvMass; Y++)
+                {
+	                for(Int_t AB = 0; AB < N_h_InvMass; AB++)
+                    {
+	                    for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
+	                    {
+		                    h_InvMass[A][B][X][Y][AB][i_hist_pt]->Write();
+                            n_histograms += 1;
+                        }
+	                }
+                }
+            }
+        }
     }
-		
-	}}}}}
-
 
     cout << "\n TOTAL NUMBER OF HISTOGRAMS = " << n_histograms << "\n\n";
-	Outputfile      ->cd();
+
+	Outputfile->cd();
 	cout << "Close output file" << endl;
 	cout << "" << endl;
-	Outputfile      ->Close();
+	Outputfile->Close();
 
 }
 

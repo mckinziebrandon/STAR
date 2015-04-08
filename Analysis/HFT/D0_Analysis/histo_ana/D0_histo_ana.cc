@@ -24,8 +24,11 @@ void D0_histo_ana()
     TString HistName;
 
     TFile* infiles[2];
-    infiles[0] = TFile::Open("./Data/all_same_event_600_16.root");
-    infiles[1] = TFile::Open("./Data/all_mixed_event_600_16.root");
+    infiles[0] = TFile::Open("./Data/all_same_event_sin2.root");
+    infiles[1] = TFile::Open("./Data/all_mixed_event_sin2.root");
+
+    TFile* outFile = new TFile("./Plotting/Data/signal_hists_sin2.root", "RECREATE");
+    outFile->cd();
 
     cout << "Input files opened" << endl;
 
@@ -137,7 +140,6 @@ void D0_histo_ana()
             } // -------- end normalization loop --------
 
             // restart loop if this hist has no data
-
             if (!hist_exists)
                 continue;
 
@@ -148,18 +150,20 @@ void D0_histo_ana()
             Int_t stop  = h_InvMass[A][B][X][Y][AB][i_hist_pt][1]->FindBin(1.89);
             signal      = h_InvMass[A][B][X][Y][AB][i_hist_pt][2]->Integral(start, stop);
             background  = h_InvMass[A][B][X][Y][AB][i_hist_pt][1]->Integral(start, stop);
-            if (signal + background > 0){
+            if (signal + background > 0)
+            {
                 this_signif = signal / TMath::Sqrt(signal + background);
-                if (this_signif > max_signif[i_hist_pt]){
-
+                if (this_signif > max_signif[i_hist_pt])
+                {
                     // save significance value and associated objects
                     max_signif[i_hist_pt]   = this_signif;
                     cuts_arr[i_hist_pt] = {
                             0.002 + A * 0.0033,
                             0.002 + B * 0.0033,
                             0.005 + X * 0.0083,
-                            0.185 - Y * 0.0033,
-                            0.185 - AB * 0.0033,
+                            //()0.0185 - Y * 0.0033,  // actual verdisty
+                            0.980 + Y * 0.0035,      // cos_theta
+                            0.0185 - AB * 0.0033 
                             };
                     h_max_sig[i_hist_pt]    = (TH1D*)h_InvMass[A][B][X][Y][AB][i_hist_pt][2]->Clone();
                     h_max_mixed[i_hist_pt]  = (TH1D*)h_InvMass[A][B][X][Y][AB][i_hist_pt][1]->Clone();
@@ -181,8 +185,6 @@ void D0_histo_ana()
     TH1D*       h_sig_vals = new TH1D("h_sig_vals", "signficance values", 6, 0, 6);
     TH1D*       h_cuts[N_h_InvMass_pt];
     TCanvas*    c_InvMass_sub[N_h_InvMass_pt];
-    TFile*      outFile = new TFile("./Plotting/Data/signal_hists_600_16.root", "RECREATE");
-                outFile->cd();
     for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
 
             // canvas and histogram customization
