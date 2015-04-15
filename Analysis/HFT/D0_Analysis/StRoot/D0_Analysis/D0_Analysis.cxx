@@ -42,6 +42,7 @@ const Int_t N_h_InvMass_pt = 6;
 static TH1D* h_InvMass[N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass_pt];
 static TH1D* special_h_InvMass = new TH1D("special_h_InvMass", "special_h_InvMass", 100, 1.4, 2.4);
 static TH1D* special_h_InvMass_2 = new TH1D("special_h_InvMass_2", "special_h_InvMass_2", 100, 1.4, 2.4);
+static TH1D* special_h_InvMass_2_40m = new TH1D("special_h_InvMass_2_40m", "special_h_InvMass_2_40m", 100, 1.4, 2.4);
 
 
 //____________________________________________________________________________________________________
@@ -423,6 +424,7 @@ void D0_Analysis::loop()
                 special_h_InvMass->Fill(InvAB);
             }
 
+        // Mustafa's plot
         if( fabs(dcaA) > 0.008  &&
             fabs(dcaB) > 0.008  &&
             dcaAB      < 0.005  &&
@@ -431,6 +433,18 @@ void D0_Analysis::loop()
             fabs(qpB)  > 1.2 )
             {
                 special_h_InvMass_2->Fill(InvAB);
+            } 
+        
+        // with 40 micron on VerdistX
+        if( fabs(dcaA)  > 0.008     &&
+            fabs(dcaB)  > 0.008     &&
+            dcaAB       < 0.005     &&
+            VerdistX    > 0.004     &&
+            cos_theta   > 0.995     && // cos(theta) > 0.995
+            fabs(qpA)   > 1.2       &&
+            fabs(qpB)   > 1.2 )
+            {
+                special_h_InvMass_2_40m->Fill(InvAB);
             } 
         
 
@@ -455,6 +469,7 @@ void D0_Analysis::finalize()
 	Outputfile      ->cd();
     special_h_InvMass->Write();
     special_h_InvMass_2->Write();
+    special_h_InvMass_2_40m->Write();
 	Outputfile->mkdir("h_InvMass");
 	Outputfile->cd("h_InvMass");
 
