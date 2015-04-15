@@ -41,8 +41,8 @@ const Int_t N_h_InvMass    = 6;
 const Int_t N_h_InvMass_pt = 6;
 static TH1D* h_InvMass[N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass_pt];
 static TH1D* special_h_InvMass = new TH1D("special_h_InvMass", "special_h_InvMass", 100, 1.4, 2.4);
-static TH1D* special_h_InvMass_2 = new TH1D("special_h_InvMass_2", "special_h_InvMass_2", 100, 1.4, 2.4);
-static TH1D* special_h_InvMass_2_40m = new TH1D("special_h_InvMass_2_40m", "special_h_InvMass_2_40m", 100, 1.4, 2.4);
+static TH1D* special_h_InvMass_2[4];
+
 
 
 //____________________________________________________________________________________________________
@@ -107,6 +107,15 @@ void D0_Analysis::init()
 
     //----------------------------------------------------------------------------------------------------
 	cout << "Define histograms" << endl;
+
+    // initialize special hists 
+    for(Int_t i_hist = 0; i_hist <= 4; i_hist++)
+    {
+        HistName = "special_h_InvMass_2_index_";
+        HistName += i_hist;
+        special_h_InvMass_2[i_hist]= new TH1D(HistName.Data(), HistName.Data(), 125, 1.4, 2.4);
+    }
+
 	for(Int_t A = 0; A < N_h_InvMass; A++){
 	for(Int_t B = 0; B < N_h_InvMass; B++){
 	for(Int_t X = 0; X < N_h_InvMass; X++){
@@ -353,12 +362,12 @@ void D0_Analysis::loop()
 		// initialize vectors with cut ranges
         for(Int_t i = 0; i < N_h_InvMass; i++)
         {
-            dcaA_cut.push_back(0.002 + i * 0.0033);		// 20 - 185 microns
-            dcaB_cut.push_back(0.002 + i * 0.0033);		// 20 - 185 microns
-            VerdistX_cut.push_back(0.005 + i * 0.0083);	// 50 - 465 microns
-            cos_theta_cut.push_back(0.98 + i * 0.0035); // 0.98 - 0.9975
-//          VerdistY_cut.push_back(0.0185 - i * 0.0033);// 185 - 20 microns
-            dcaAB_cut.push_back(0.0185 - i * 0.0033);	// 185 - 20 microns 
+            dcaA_cut.push_back(0.0060 + i * 0.0015);	    // 60 - 135 microns
+            dcaB_cut.push_back(0.0060 + i * 0.0015);	    // 20 - 185 microns
+            VerdistX_cut.push_back(0.0120 + i * 0.0050);    // 120 - 370 microns
+            cos_theta_cut.push_back(0.986 + i * 0.0020);    // 0.9860 - 0.9960
+//          VerdistY_cut.push_back(0.0185 - i * 0.0033);    // 185 - 20 microns
+            dcaAB_cut.push_back(0.0080 - i * 0.0008);	    // 80 - 40  microns 
         }
 
         // ensure all values are within cut range
@@ -397,7 +406,7 @@ void D0_Analysis::loop()
                             for(Int_t AB = 0; AB < N_h_InvMass; AB++)
                             {
                                 if (dcaAB      > dcaAB_cut[AB])     break;
-                                for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
+                                for(Int_t i_hist_pt = 3; i_hist_pt < 4/*N_h_InvMass_pt*/; i_hist_pt++) // focused on 1.5 - 2.5 GeV
                                 {
                                     if(p_t < pt_cut[i_hist_pt+1] && p_t >= pt_cut[i_hist_pt])
                                         {
@@ -423,19 +432,8 @@ void D0_Analysis::loop()
             {
                 special_h_InvMass->Fill(InvAB);
             }
+ 
 
-        // Mustafa's plot
-        if( fabs(dcaA) > 0.008  &&
-            fabs(dcaB) > 0.008  &&
-            dcaAB      < 0.005  &&
-            cos_theta  > 0.995  && // cos(theta) > 0.995
-            fabs(qpA)  > 1.2    &&
-            fabs(qpB)  > 1.2 )
-            {
-                special_h_InvMass_2->Fill(InvAB);
-            } 
-        
-        // with 40 micron on VerdistX
         if( fabs(dcaA)  > 0.008     &&
             fabs(dcaB)  > 0.008     &&
             dcaAB       < 0.005     &&
@@ -444,7 +442,19 @@ void D0_Analysis::loop()
             fabs(qpA)   > 1.2       &&
             fabs(qpB)   > 1.2 )
             {
-                special_h_InvMass_2_40m->Fill(InvAB);
+                // fill each special histogram
+                special_h_InvMass_2[0]->Fill(InvAB);
+
+                if (fabs(nsA) < 2 && fabs(nsB) < 3){
+                    special_h_InvMass_2[1]->Fill(InvAB);
+                }
+
+                if (fabs(nsA) < 2 && fabs(nsB) < 2.5){
+                    special_h_InvMass_2[2]->Fill(InvAB);
+                }
+                if (fabs(nsA) < 2 && fabs(nsB) < 2.5 && m2A > -10){
+                    special_h_InvMass_2[3]->Fill(InvAB);
+                }
             } 
         
 
@@ -466,10 +476,9 @@ void D0_Analysis::finalize()
 
 	cout << "" << endl;
 	cout << "Write output" << endl;
-	Outputfile      ->cd();
+	Outputfile->cd();
     special_h_InvMass->Write();
-    special_h_InvMass_2->Write();
-    special_h_InvMass_2_40m->Write();
+    for(Int_t i = 0; i < 4; i++){ special_h_InvMass_2[i]->Write(); }
 	Outputfile->mkdir("h_InvMass");
 	Outputfile->cd("h_InvMass");
 
@@ -486,7 +495,7 @@ void D0_Analysis::finalize()
                 {
 	                for(Int_t AB = 0; AB < N_h_InvMass; AB++)
                     {
-	                    for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
+	                    for(Int_t i_hist_pt = 3; i_hist_pt < 4/*N_h_InvMass_pt*/; i_hist_pt++)
 	                    {
 		                    h_InvMass[A][B][X][Y][AB][i_hist_pt]->Write();
                             n_histograms += 1;

@@ -18,8 +18,8 @@ void plot_signal_hists(){
     const Int_t N_h_InvMass_pt = 6;
     const Int_t N_cuts = 5;
 
-    TFile * inFile = TFile::Open("./Data/signal_hists_cos.root");
-    TFile * outFile = new TFile("./Plots/final_hists_cos.root", "RECREATE");
+    TFile * inFile = TFile::Open("./Data/signal_hists_narrowpt3.root");
+    TFile * outFile = new TFile("./Plots/final_hists_narrowpt3.root", "RECREATE");
     outFile->cd();
 
     TH1D * h_same[N_h_InvMass_pt];      
@@ -30,7 +30,8 @@ void plot_signal_hists(){
     TString HistName;
 
     TCanvas * c_InvMass_sub[N_h_InvMass_pt];
-    for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+    //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+    for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
 
         // retrieve histograms from input file
         HistName = "sig_pt_";

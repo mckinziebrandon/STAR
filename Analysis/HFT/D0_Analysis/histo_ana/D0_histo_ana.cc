@@ -24,18 +24,18 @@ void D0_histo_ana()
     TString HistName;
 
     TFile* infiles[2];
-    infiles[0] = TFile::Open("./Data/all_same_event_sin2.root");
-    infiles[1] = TFile::Open("./Data/all_mixed_event_sin2.root");
+    infiles[0] = TFile::Open("./Data/all_same_event_narrowpt3.root");
+    infiles[1] = TFile::Open("./Data/all_mixed_event_narrowpt3.root");
 
-    TFile* outFile = new TFile("./Plotting/Data/signal_hists_sin2.root", "RECREATE");
+    TFile* outFile = new TFile("./Plotting/Data/signal_hists_narrowpt3.root", "RECREATE");
     outFile->cd();
 
     cout << "Input files opened" << endl;
 
     // NOTE: ensure these values match D0_Analysis.cxx
-    const Int_t N_h_InvMass    = 6;
-    const Int_t N_h_InvMass_pt = 6;
-    const Int_t N_cuts = 5;
+    const Int_t N_h_InvMass     = 6;
+    const Int_t N_h_InvMass_pt  = 6;
+    const Int_t N_cuts          = 5;
 
     // create InvMass & other histograms:
     TH1D*       h_InvMass[N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass][N_h_InvMass_pt][3];
@@ -53,7 +53,8 @@ void D0_histo_ana()
         for(Int_t X = 0; X < N_h_InvMass; X++){
         for(Int_t Y = 0; Y < N_h_InvMass; Y++){
         for(Int_t AB = 0; AB < N_h_InvMass; AB++){
-        for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+        //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+        for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
         for(Int_t i_SE_ME = 0; i_SE_ME < 2; i_SE_ME++){
             HistName = "h_InvMass/h_InvMass_A";
 			HistName += A;
@@ -70,9 +71,11 @@ void D0_histo_ana()
             // assign each histogram to corresponding data from input files
             if (((TH1D*)infiles[i_SE_ME]->Get(HistName.Data()))->GetEntries())
 			    h_InvMass[A][B][X][Y][AB][i_hist_pt][i_SE_ME] = (TH1D*)infiles[i_SE_ME]->Get(HistName.Data());
-            else {
+            else 
+            { 
                 h_InvMass[A][B][X][Y][AB][i_hist_pt][i_SE_ME] = NULL;
-                continue;}
+                continue;
+            }
             
             HistName += "_";
             HistName += i_SE_ME;
@@ -81,38 +84,25 @@ void D0_histo_ana()
     }}}}}}}
 
 
-    // Normalize histograms and get subtracted result
-    // Then calculate significance
     Double_t    Int_SE_ME[2]; 
     Bool_t      hist_exists = true;
+    // -------- significance loop -----------
 	for(Int_t A = 0; A < N_h_InvMass; A++){
         for(Int_t B = 0; B < N_h_InvMass; B++){
         for(Int_t X = 0; X < N_h_InvMass; X++){
         for(Int_t Y = 0; Y < N_h_InvMass; Y++){
         for(Int_t AB = 0; AB < N_h_InvMass; AB++){
-        for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-        //std::cout << "; i_hist_pt = " << i_hist_pt << endl;
-            /* ignoring this for right now
-            HistName = "c_InvMass_cut";
-            HistName += i_hist;
-            HistName += "_pt";
-            HistName += i_hist_pt;
-            c_InvMass[i_hist][i_hist_pt] = new TCanvas(HistName.Data(),HistName.Data(),10,10,600,600);
-            c_InvMass[i_hist][i_hist_pt]->cd()->SetFillColor(10);
-            c_InvMass[i_hist][i_hist_pt]->cd()->SetTopMargin(0.1);
-            c_InvMass[i_hist][i_hist_pt]->cd()->SetBottomMargin(0.2);
-            c_InvMass[i_hist][i_hist_pt]->cd()->SetRightMargin(0.05);
-            c_InvMass[i_hist][i_hist_pt]->cd()->SetLeftMargin(0.2);
-            c_InvMass[i_hist][i_hist_pt]->cd()->SetLogy(0);
-            */
+        //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+        for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
 
             hist_exists = true;
             Int_SE_ME   = {0};
             // -------- normalization loop --------
-            for(Int_t i_SE_ME = 0; i_SE_ME < 2; i_SE_ME++){
-                
+            for(Int_t i_SE_ME = 0; i_SE_ME < 2; i_SE_ME++)
+            {
                 // leave loop immediately if this hist has no data
-                if (h_InvMass[A][B][X][Y][AB][i_hist_pt][i_SE_ME]==NULL){
+                if (h_InvMass[A][B][X][Y][AB][i_hist_pt][i_SE_ME]==NULL)
+                {
                     hist_exists = false;
                     break;
                 }
@@ -158,12 +148,12 @@ void D0_histo_ana()
                     // save significance value and associated objects
                     max_signif[i_hist_pt]   = this_signif;
                     cuts_arr[i_hist_pt] = {
-                            0.002 + A * 0.0033,
-                            0.002 + B * 0.0033,
-                            0.005 + X * 0.0083,
+                            0.0060 + A * 0.0015,
+                            0.0060 + B * 0.0015,
+                            0.0120 + X * 0.0050,
                             //()0.0185 - Y * 0.0033,  // actual verdisty
-                            0.980 + Y * 0.0035,      // cos_theta
-                            0.0185 - AB * 0.0033 
+                            0.9860 + Y * 0.0020,      // cos_theta
+                            0.0080 - AB * 0.0008 
                             };
                     h_max_sig[i_hist_pt]    = (TH1D*)h_InvMass[A][B][X][Y][AB][i_hist_pt][2]->Clone();
                     h_max_mixed[i_hist_pt]  = (TH1D*)h_InvMass[A][B][X][Y][AB][i_hist_pt][1]->Clone();
@@ -172,20 +162,19 @@ void D0_histo_ana()
                     // output updated significance values
                     std::cout << "New max significance = " << max_signif[i_hist_pt];
                     std::cout << ", at i_hist_pt = " << i_hist_pt;
-                    std::cout << "; cuts_arr[0] = " << cuts_arr[i_hist_pt][0];
-                    std::cout << "; cuts_arr[1] = " << cuts_arr[i_hist_pt][1] << endl;
                 }
             }
 
 
-    }}}}}}
+    }}}}}} // end significance loop
 
 
     // Write all desired information to output
     TH1D*       h_sig_vals = new TH1D("h_sig_vals", "signficance values", 6, 0, 6);
     TH1D*       h_cuts[N_h_InvMass_pt];
     TCanvas*    c_InvMass_sub[N_h_InvMass_pt];
-    for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+    //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
+    for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
 
             // canvas and histogram customization
             HistName = "c_InvMass_sub_pt";
