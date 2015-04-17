@@ -24,10 +24,10 @@ void D0_histo_ana()
     TString HistName;
 
     TFile* infiles[2];
-    infiles[0] = TFile::Open("./Data/all_same_event_narrowpt3.root");
-    infiles[1] = TFile::Open("./Data/all_mixed_event_narrowpt3.root");
+    infiles[0] = TFile::Open("./Data/all_same_event_narrowpt2.root");
+    infiles[1] = TFile::Open("./Data/all_mixed_event_narrowpt2.root");
 
-    TFile* outFile = new TFile("./Plotting/Data/signal_hists_narrowpt3.root", "RECREATE");
+    TFile* outFile = new TFile("./Plotting/Data/signal_hists_narrowpt2.root", "RECREATE");
     outFile->cd();
 
     cout << "Input files opened" << endl;
@@ -54,7 +54,7 @@ void D0_histo_ana()
         for(Int_t Y = 0; Y < N_h_InvMass; Y++){
         for(Int_t AB = 0; AB < N_h_InvMass; AB++){
         //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-        for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
+        for(Int_t i_hist_pt = 2; i_hist_pt < 3; i_hist_pt++){
         for(Int_t i_SE_ME = 0; i_SE_ME < 2; i_SE_ME++){
             HistName = "h_InvMass/h_InvMass_A";
 			HistName += A;
@@ -93,7 +93,7 @@ void D0_histo_ana()
         for(Int_t Y = 0; Y < N_h_InvMass; Y++){
         for(Int_t AB = 0; AB < N_h_InvMass; AB++){
         //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-        for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
+        for(Int_t i_hist_pt = 2; i_hist_pt < 3; i_hist_pt++){
 
             hist_exists = true;
             Int_SE_ME   = {0};
@@ -148,12 +148,11 @@ void D0_histo_ana()
                     // save significance value and associated objects
                     max_signif[i_hist_pt]   = this_signif;
                     cuts_arr[i_hist_pt] = {
-                            0.0060 + A * 0.0015,
-                            0.0060 + B * 0.0015,
-                            0.0120 + X * 0.0050,
-                            //()0.0185 - Y * 0.0033,  // actual verdisty
-                            0.9860 + Y * 0.0020,      // cos_theta
-                            0.0080 - AB * 0.0008 
+                            0.0020 + A * 0.0015,
+                            0.0020 + B * 0.0015,
+                            0.0050 + X * 0.0030,
+                            0.9800 + Y * 0.0012,      // cos_theta
+                            0.0090 - AB * 0.0010 
                             };
                     h_max_sig[i_hist_pt]    = (TH1D*)h_InvMass[A][B][X][Y][AB][i_hist_pt][2]->Clone();
                     h_max_mixed[i_hist_pt]  = (TH1D*)h_InvMass[A][B][X][Y][AB][i_hist_pt][1]->Clone();
@@ -174,7 +173,7 @@ void D0_histo_ana()
     TH1D*       h_cuts[N_h_InvMass_pt];
     TCanvas*    c_InvMass_sub[N_h_InvMass_pt];
     //for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-    for(Int_t i_hist_pt = 3; i_hist_pt < 4; i_hist_pt++){
+    for(Int_t i_hist_pt = 2; i_hist_pt < 3; i_hist_pt++){
 
             // canvas and histogram customization
             HistName = "c_InvMass_sub_pt";
