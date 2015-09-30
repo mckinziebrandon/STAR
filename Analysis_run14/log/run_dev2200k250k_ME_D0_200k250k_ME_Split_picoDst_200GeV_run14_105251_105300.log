@@ -1,0 +1,1877 @@
+  *******************************************
+  *                                         *
+  *        W E L C O M E  to  R O O T       *
+  *                                         *
+  *   Version   5.34/09      26 June 2013   *
+  *                                         *
+  *  You are welcome to visit our Web site  *
+  *          http://root.cern.ch            *
+  *                                         *
+  *******************************************
+
+ROOT 5.34/09 (v5-34-09@v5-34-09, Jun 26 2013, 17:10:36 on linux)
+
+CINT/ROOT C/C++ Interpreter version 5.18.00, July 2, 2010
+Type ? for help. Commands must be C++ statements.
+Enclose multiple statements between { }.
+*** Float Point Exception is OFF ***
+ *** Start at Date : Sat Jun 20 22:44:45 2015
+QAInfo:You are using STAR_LEVEL : new, ROOT_LEVEL : 5.34.09_1 and node : pc2128 
+
+Processing Analysis_Snurf_Macro.cc(200001,250000,1,"Split_picoDst_200GeV_run14_105251_105300","D0_200k250k_ME",400,8)...
+PDSF/project environment selected
+Analysis_Snurf_Macro started with 250000 events
+strangeArrayNames-arrayNames-__NARRAYS__ = 0
+ loading of shared libraries done
+Shared libraries loaded
+Start of analysis
+Output filename = _out_D0_200k250k_ME.root
+Define re-centering and shift correction files
+Re-centering file = /global/homes/a/aschmah/STAR/Analysis/Corrections/Recentering_FitParams_AuAu200run14.root
+Shift method file = /global/homes/a/aschmah/STAR/Analysis/Corrections/Shift_FitParams_AuAu200run14.root
+Au+Au @ 200 GeV run14 was selected
+Output directory = /project/projectdirs/star/aschmah/
+inDir_asciifile = /global/homes/a/aschmah/STAR/File_lists/AuAu200_run14/
+Input file = Split_picoDst_200GeV_run14_105251_105300
+First event = 200001
+Number of analyzed events set to 250000
+Mixed event flag = 1
+Analysis number = 400
+Beam time number = 8
+***************** Initializing objects *******************
+StRefMultCorr::read  Open StRoot/StRefMultCorr/Centrality_def_refmult.txt [OK]
+StRefMultCorr::readBadRuns  For refmult: open   StRoot/StRefMultCorr/bad_runs_refmult_year2010.txt [OK]
+StRefMultCorr::readBadRuns  For refmult: open   StRoot/StRefMultCorr/bad_runs_refmult_year2011.txt [OK]
+StRefMultCorr::read  Open StRoot/StRefMultCorr/Centrality_def_refmult2.txt [OK]
+StRefMultCorr::readBadRuns  For refmult2: open   StRoot/StRefMultCorr/bad_runs_refmult_year2010.txt [OK]
+StRefMultCorr::readBadRuns  For refmult2: open   StRoot/StRefMultCorr/bad_runs_refmult_year2011.txt [OK]
+StRefMultCorr::read  Open StRoot/StRefMultCorr/Centrality_def_refmult3.txt [OK]
+StRefMultCorr::readBadRuns  For refmult3: open   StRoot/StRefMultCorr/bad_runs_refmult_year2010.txt [OK]
+StRefMultCorr::readBadRuns  For refmult3: open   StRoot/StRefMultCorr/bad_runs_refmult_year2011.txt [OK]
+MAGFIELDFACTOR = 1e-14
+Read data from input file: /global/homes/a/aschmah/STAR/File_lists/AuAu200_run14/Split_picoDst_200GeV_run14_105251_105300.list
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000034.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000036.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000039.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000041.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000043.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000045.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000046.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000051.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000054.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4000056.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500001.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500012.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500018.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500020.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500021.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500025.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500026.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500029.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500030.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500037.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500039.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500041.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500043.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500046.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500048.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500053.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_4500054.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000003.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000011.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000019.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000021.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000022.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000026.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000029.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000032.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000033.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000037.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000040.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000043.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000045.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000048.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000049.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000053.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5000055.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5500002.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5500013.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5500018.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5500019.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5500023.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/164/15164068/st_physics_15164068_raw_5500024.picoDst.root
+StInfo:  Total 50 files have been read in.
+
+************************************************************************************************************
+Number of entries in tree = 332888
+************************************************************************************************************
+
+Open the phi correction histograms for event plane analysis
+Initialize re-centering correction
+Min file id = 80054, max file id = 98056, number of indices = 688
+Open re-centering correction histograms
+Initialize shift correction
+Read shift parameter histograms
+
+-------------------------------------------------------------------------
+Total number of phi correction files = 1920
+Files with max entry > 100 = 1920
+-------------------------------------------------------------------------
+Open the cut files
+Cut files opened
+Defining output
+Output file: /project/projectdirs/star/aschmah/Split_picoDst_200GeV_run14_105251_105300_out_D0_200k250k_ME.root
+*******************************************************************************************************
+Defining ntuples
+All Ntuples defined
+Make started
+******* Start of event loop ********
+Define bad run list
+--------------- Mixed event analysis started ---------------
+.......... 200500 (80.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 7, events/second = 0
+.......... 201000 (80.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 8, events/second = 0
+.......... 201500 (80.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 26, events/second = 0
+.......... 202000 (80.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 74, events/second = 0
+.......... 202500 (81%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 187, events/second = 0
+.......... 203000 (81.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 232, events/second = 0
+.......... 203500 (81.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 350, events/second = 0
+.......... 204000 (81.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 487, events/second = 0
+.......... 204500 (81.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 440, events/second = 0
+.......... 205000 (82%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 458, events/second = 0
+.......... 205500 (82.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 455, events/second = 0
+.......... 206000 (82.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 295, events/second = 0
+.......... 206500 (82.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 279, events/second = 0
+.......... 207000 (82.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 328, events/second = 0
+.......... 207500 (83%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 347, events/second = 0
+.......... 208000 (83.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 338, events/second = 0
+.......... 208500 (83.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 358, events/second = 0
+.......... 209000 (83.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 421, events/second = 0
+.......... 209500 (83.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 433, events/second = 0
+.......... 210000 (84%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 506, events/second = 0
+.......... 210500 (84.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 380, events/second = 0
+.......... 211000 (84.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 329, events/second = 0
+.......... 211500 (84.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 282, events/second = 0
+.......... 212000 (84.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 288, events/second = 0
+.......... 212500 (85%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 356, events/second = 0
+.......... 213000 (85.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 265, events/second = 0
+.......... 213500 (85.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 377, events/second = 0
+.......... 214000 (85.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 246, events/second = 0
+.......... 214500 (85.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 259, events/second = 0
+.......... 215000 (86%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 289, events/second = 0
+.......... 215500 (86.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 367, events/second = 0
+.......... 216000 (86.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 435, events/second = 0
+.......... 216500 (86.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 530, events/second = 0
+.......... 217000 (86.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 526, events/second = 0
+.......... 217500 (87%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 586, events/second = 0
+.......... 218000 (87.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 746, events/second = 0
+.......... 218500 (87.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 433, events/second = 0
+.......... 219000 (87.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 615, events/second = 0
+.......... 219500 (87.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 907, events/second = 0
+.......... 220000 (88%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 1128, events/second = 0
+.......... 220500 (88.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 700, events/second = 0
+.......... 221000 (88.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 1075, events/second = 0
+.......... 221500 (88.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 968, events/second = 0
+.......... 222000 (88.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 588, events/second = 0
+.......... 222500 (89%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 993, events/second = 0
+.......... 223000 (89.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 863, events/second = 0
+.......... 223500 (89.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 932, events/second = 0
+.......... 224000 (89.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 869, events/second = 0
+.......... 224500 (89.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 749, events/second = 0
+.......... 225000 (90%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 1287, events/second = 0
+.......... 225500 (90.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 450, events/second = 0
+.......... 226000 (90.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 875, events/second = 0
+.......... 226500 (90.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 817, events/second = 0
+.......... 227000 (90.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 501, events/second = 0
+.......... 227500 (91%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 514, events/second = 0
+.......... 228000 (91.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 488, events/second = 0
+.......... 228500 (91.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 534, events/second = 0
+.......... 229000 (91.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 513, events/second = 0
+.......... 229500 (91.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 452, events/second = 0
+.......... 230000 (92%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 322, events/second = 0
+.......... 230500 (92.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 601, events/second = 0
+.......... 231000 (92.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 465, events/second = 0
+.......... 231500 (92.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 414, events/second = 0
+.......... 232000 (92.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 349, events/second = 0
+.......... 232500 (93%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 328, events/second = 0
+.......... 233000 (93.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 397, events/second = 0
+.......... 233500 (93.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 432, events/second = 0
+.......... 234000 (93.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 276, events/second = 0
+.......... 234500 (93.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 303, events/second = 0
+.......... 235000 (94%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 309, events/second = 0
+.......... 235500 (94.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 360, events/second = 0
+.......... 236000 (94.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 396, events/second = 0
+.......... 236500 (94.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 487, events/second = 0
+.......... 237000 (94.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 307, events/second = 0
+.......... 237500 (95%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 333, events/second = 0
+.......... 238000 (95.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 270, events/second = 0
+.......... 238500 (95.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 351, events/second = 0
+.......... 239000 (95.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 274, events/second = 0
+.......... 239500 (95.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 308, events/second = 0
+.......... 240000 (96%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 288, events/second = 0
+.......... 240500 (96.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 268, events/second = 0
+.......... 241000 (96.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 278, events/second = 0
+.......... 241500 (96.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 274, events/second = 0
+.......... 242000 (96.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 227, events/second = 0
+.......... 242500 (97%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 270, events/second = 0
+.......... 243000 (97.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 359, events/second = 0
+.......... 243500 (97.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 300, events/second = 0
+.......... 244000 (97.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 265, events/second = 0
+.......... 244500 (97.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 333, events/second = 0
+.......... 245000 (98%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 238, events/second = 0
+.......... 245500 (98.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 527, events/second = 0
+.......... 246000 (98.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 423, events/second = 0
+.......... 246500 (98.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 465, events/second = 0
+.......... 247000 (98.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 390, events/second = 0
+.......... 247500 (99%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 424, events/second = 0
+.......... 248000 (99.2%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 351, events/second = 0
+.......... 248500 (99.4%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 382, events/second = 0
+.......... 249000 (99.6%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 344, events/second = 0
+.......... 249500 (99.8%) 
+==> Processing data, Total number of events = 332888, total counter = 0, total counter A = 0, diff time = 284, events/second = 0
+.........------------ ref. mult. bin = 0 ----------------
+[------------ z-axis bin = 0 ----------------
+[0, 0, 0, 2, 0, 0, 0, 1, 0, 0, ]
+------------ z-axis bin = 1 ----------------
+[0, 0, 1, 0, 2, 0, 0, 1, 0, 1, ]
+------------ z-axis bin = 2 ----------------
+[0, 1, 0, 1, 0, 0, 2, 1, 1, 0, ]
+------------ z-axis bin = 3 ----------------
+[4, 0, 2, 2, 2, 5, 6, 0, 2, 5, ]
+------------ z-axis bin = 4 ----------------
+[0, 2, 6, 6, 1, 5, 4, 3, 7, 2, ]
+------------ z-axis bin = 5 ----------------
+[6, 4, 5, 6, 4, 3, 5, 5, 2, 5, ]
+------------ z-axis bin = 6 ----------------
+[6, 5, 2, 2, 3, 0, 6, 2, 5, 0, ]
+------------ z-axis bin = 7 ----------------
+[1, 5, 3, 0, 5, 3, 3, 4, 3, 6, ]
+------------ z-axis bin = 8 ----------------
+[6, 4, 2, 0, 1, 5, 0, 1, 5, 1, ]
+------------ z-axis bin = 9 ----------------
+[3, 4, 1, 5, 6, 4, 2, 2, 3, 4, ]
+------------ z-axis bin = 10 ----------------
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ]
+------------ z-axis bin = 11 ----------------
+[0, 0, 0, 0, 1, 0, 1, 0, 1, 1, ]
+------------ z-axis bin = 12 ----------------
+[0, 0, 0, 0, 0, 0, 1, 1, 0, 0, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 1 ----------------
+[------------ z-axis bin = 0 ----------------
+[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, ]
+------------ z-axis bin = 1 ----------------
+[0, 1, 1, 0, 1, 1, 2, 1, 0, 3, ]
+------------ z-axis bin = 2 ----------------
+[0, 0, 0, 1, 3, 1, 1, 2, 1, 0, ]
+------------ z-axis bin = 3 ----------------
+[4, 5, 1, 6, 0, 3, 1, 5, 1, 0, ]
+------------ z-axis bin = 4 ----------------
+[5, 0, 5, 4, 1, 1, 2, 3, 3, 4, ]
+------------ z-axis bin = 5 ----------------
+[0, 6, 0, 1, 1, 0, 6, 0, 3, 4, ]
+------------ z-axis bin = 6 ----------------
+[3, 0, 5, 4, 2, 6, 5, 4, 1, 1, ]
+------------ z-axis bin = 7 ----------------
+[5, 1, 5, 4, 6, 6, 1, 0, 3, 1, ]
+------------ z-axis bin = 8 ----------------
+[3, 4, 5, 5, 3, 5, 4, 3, 2, 2, ]
+------------ z-axis bin = 9 ----------------
+[3, 6, 5, 6, 0, 4, 4, 2, 3, 1, ]
+------------ z-axis bin = 10 ----------------
+[0, 2, 1, 0, 0, 1, 0, 0, 2, 0, ]
+------------ z-axis bin = 11 ----------------
+[0, 0, 1, 1, 1, 0, 0, 0, 2, 0, ]
+------------ z-axis bin = 12 ----------------
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 2 ----------------
+[------------ z-axis bin = 0 ----------------
+[0, 1, 0, 0, 0, 2, 0, 0, 0, 0, ]
+------------ z-axis bin = 1 ----------------
+[0, 0, 0, 0, 1, 0, 1, 0, 1, 0, ]
+------------ z-axis bin = 2 ----------------
+[1, 0, 3, 0, 0, 4, 0, 1, 1, 0, ]
+------------ z-axis bin = 3 ----------------
+[3, 5, 5, 6, 3, 5, 4, 0, 0, 4, ]
+------------ z-axis bin = 4 ----------------
+[3, 2, 4, 5, 5, 5, 0, 3, 1, 1, ]
+------------ z-axis bin = 5 ----------------
+[5, 6, 3, 3, 5, 3, 5, 4, 5, 4, ]
+------------ z-axis bin = 6 ----------------
+[4, 5, 0, 6, 2, 2, 0, 3, 1, 3, ]
+------------ z-axis bin = 7 ----------------
+[6, 5, 3, 1, 2, 2, 0, 6, 3, 3, ]
+------------ z-axis bin = 8 ----------------
+[3, 3, 2, 4, 2, 3, 2, 2, 1, 1, ]
+------------ z-axis bin = 9 ----------------
+[3, 3, 6, 3, 4, 2, 5, 3, 0, 3, ]
+------------ z-axis bin = 10 ----------------
+[1, 1, 0, 0, 0, 1, 1, 1, 0, 2, ]
+------------ z-axis bin = 11 ----------------
+[0, 0, 0, 1, 0, 0, 1, 2, 2, 0, ]
+------------ z-axis bin = 12 ----------------
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 3 ----------------
+[------------ z-axis bin = 0 ----------------
+[0, 0, 2, 0, 2, 0, 2, 1, 1, 0, ]
+------------ z-axis bin = 1 ----------------
+[1, 0, 0, 0, 0, 2, 0, 3, 2, 0, ]
+------------ z-axis bin = 2 ----------------
+[2, 2, 1, 2, 1, 1, 3, 0, 3, 1, ]
+------------ z-axis bin = 3 ----------------
+[5, 0, 4, 5, 5, 5, 0, 0, 6, 5, ]
+------------ z-axis bin = 4 ----------------
+[5, 0, 0, 4, 6, 3, 4, 0, 5, 3, ]
+------------ z-axis bin = 5 ----------------
+[4, 2, 1, 4, 5, 2, 2, 1, 6, 3, ]
+------------ z-axis bin = 6 ----------------
+[2, 5, 0, 2, 5, 2, 5, 3, 6, 0, ]
+------------ z-axis bin = 7 ----------------
+[4, 6, 1, 6, 1, 0, 3, 2, 2, 3, ]
+------------ z-axis bin = 8 ----------------
+[4, 6, 4, 0, 5, 3, 4, 4, 0, 1, ]
+------------ z-axis bin = 9 ----------------
+[1, 4, 5, 2, 5, 6, 3, 0, 0, 1, ]
+------------ z-axis bin = 10 ----------------
+[0, 0, 0, 2, 1, 2, 2, 0, 0, 0, ]
+------------ z-axis bin = 11 ----------------
+[0, 1, 0, 1, 1, 4, 1, 0, 1, 0, ]
+------------ z-axis bin = 12 ----------------
+[0, 2, 0, 0, 0, 2, 0, 1, 1, 0, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 4 ----------------
+[------------ z-axis bin = 0 ----------------
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, ]
+------------ z-axis bin = 1 ----------------
+[2, 3, 1, 1, 1, 2, 1, 4, 3, 1, ]
+------------ z-axis bin = 2 ----------------
+[1, 2, 4, 1, 1, 0, 1, 2, 2, 2, ]
+------------ z-axis bin = 3 ----------------
+[6, 4, 5, 0, 4, 1, 0, 5, 1, 5, ]
+------------ z-axis bin = 4 ----------------
+[3, 2, 3, 1, 3, 6, 2, 3, 3, 2, ]
+------------ z-axis bin = 5 ----------------
+[5, 1, 2, 4, 5, 6, 2, 4, 2, 3, ]
+------------ z-axis bin = 6 ----------------
+[3, 2, 2, 5, 4, 5, 3, 1, 3, 3, ]
+------------ z-axis bin = 7 ----------------
+[1, 3, 5, 1, 3, 6, 3, 1, 4, 2, ]
+------------ z-axis bin = 8 ----------------
+[6, 2, 1, 4, 5, 0, 1, 0, 1, 5, ]
+------------ z-axis bin = 9 ----------------
+[5, 4, 6, 2, 3, 0, 4, 1, 4, 4, ]
+------------ z-axis bin = 10 ----------------
+[1, 1, 0, 1, 0, 3, 1, 2, 1, 2, ]
+------------ z-axis bin = 11 ----------------
+[0, 2, 0, 1, 0, 1, 2, 3, 1, 2, ]
+------------ z-axis bin = 12 ----------------
+[2, 1, 1, 0, 1, 1, 0, 1, 1, 1, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 5 ----------------
+[------------ z-axis bin = 0 ----------------
+[3, 2, 1, 2, 2, 1, 3, 5, 2, 2, ]
+------------ z-axis bin = 1 ----------------
+[2, 0, 4, 4, 3, 0, 3, 4, 2, 1, ]
+------------ z-axis bin = 2 ----------------
+[1, 2, 1, 3, 4, 4, 1, 1, 5, 2, ]
+------------ z-axis bin = 3 ----------------
+[0, 4, 6, 4, 6, 2, 6, 1, 0, 1, ]
+------------ z-axis bin = 4 ----------------
+[0, 5, 3, 2, 4, 4, 3, 1, 2, 2, ]
+------------ z-axis bin = 5 ----------------
+[2, 5, 2, 2, 4, 2, 4, 4, 2, 1, ]
+------------ z-axis bin = 6 ----------------
+[5, 0, 5, 3, 5, 4, 0, 6, 2, 4, ]
+------------ z-axis bin = 7 ----------------
+[6, 6, 4, 4, 6, 5, 3, 5, 6, 3, ]
+------------ z-axis bin = 8 ----------------
+[3, 4, 4, 2, 3, 3, 5, 4, 2, 2, ]
+------------ z-axis bin = 9 ----------------
+[0, 6, 5, 3, 5, 0, 2, 3, 6, 4, ]
+------------ z-axis bin = 10 ----------------
+[5, 3, 4, 1, 4, 3, 2, 3, 1, 4, ]
+------------ z-axis bin = 11 ----------------
+[0, 3, 1, 1, 2, 1, 4, 2, 2, 0, ]
+------------ z-axis bin = 12 ----------------
+[2, 2, 0, 1, 2, 2, 1, 0, 2, 1, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 6 ----------------
+[------------ z-axis bin = 0 ----------------
+[3, 3, 1, 5, 1, 4, 4, 0, 3, 3, ]
+------------ z-axis bin = 1 ----------------
+[1, 0, 4, 1, 3, 6, 1, 4, 6, 4, ]
+------------ z-axis bin = 2 ----------------
+[6, 4, 4, 0, 0, 1, 5, 0, 4, 3, ]
+------------ z-axis bin = 3 ----------------
+[0, 1, 3, 4, 5, 0, 1, 2, 0, 6, ]
+------------ z-axis bin = 4 ----------------
+[2, 2, 0, 4, 6, 1, 4, 1, 4, 6, ]
+------------ z-axis bin = 5 ----------------
+[5, 1, 1, 6, 4, 3, 1, 1, 3, 0, ]
+------------ z-axis bin = 6 ----------------
+[5, 3, 1, 3, 3, 4, 2, 0, 0, 3, ]
+------------ z-axis bin = 7 ----------------
+[5, 3, 0, 1, 6, 1, 2, 5, 5, 3, ]
+------------ z-axis bin = 8 ----------------
+[1, 2, 0, 1, 1, 0, 0, 0, 6, 6, ]
+------------ z-axis bin = 9 ----------------
+[0, 4, 4, 1, 5, 3, 6, 4, 0, 5, ]
+------------ z-axis bin = 10 ----------------
+[4, 4, 0, 6, 6, 1, 4, 3, 6, 4, ]
+------------ z-axis bin = 11 ----------------
+[2, 4, 3, 4, 5, 0, 0, 3, 3, 4, ]
+------------ z-axis bin = 12 ----------------
+[1, 2, 2, 5, 1, 3, 4, 5, 6, 1, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 7 ----------------
+[------------ z-axis bin = 0 ----------------
+[3, 2, 2, 2, 2, 5, 2, 4, 2, 1, ]
+------------ z-axis bin = 1 ----------------
+[2, 2, 2, 3, 1, 5, 3, 4, 4, 6, ]
+------------ z-axis bin = 2 ----------------
+[3, 3, 6, 5, 1, 5, 4, 6, 5, 5, ]
+------------ z-axis bin = 3 ----------------
+[0, 2, 1, 4, 4, 1, 6, 1, 6, 0, ]
+------------ z-axis bin = 4 ----------------
+[3, 4, 6, 6, 6, 3, 0, 0, 4, 0, ]
+------------ z-axis bin = 5 ----------------
+[6, 6, 0, 6, 0, 0, 3, 2, 6, 1, ]
+------------ z-axis bin = 6 ----------------
+[6, 2, 0, 3, 1, 0, 5, 1, 6, 1, ]
+------------ z-axis bin = 7 ----------------
+[6, 0, 3, 0, 4, 2, 2, 6, 2, 0, ]
+------------ z-axis bin = 8 ----------------
+[0, 3, 6, 2, 2, 4, 6, 1, 1, 5, ]
+------------ z-axis bin = 9 ----------------
+[0, 0, 3, 5, 2, 4, 0, 0, 1, 6, ]
+------------ z-axis bin = 10 ----------------
+[2, 4, 3, 6, 2, 1, 4, 4, 4, 3, ]
+------------ z-axis bin = 11 ----------------
+[4, 2, 1, 3, 2, 3, 6, 6, 4, 0, ]
+------------ z-axis bin = 12 ----------------
+[1, 2, 2, 3, 4, 1, 0, 2, 2, 1, ]
+]
+----------------------------------------------------------
+------------ ref. mult. bin = 8 ----------------
+[------------ z-axis bin = 0 ----------------
+[1, 2, 6, 3, 5, 2, 4, 1, 1, 1, ]
+------------ z-axis bin = 1 ----------------
+[3, 4, 3, 0, 3, 5, 2, 1, 2, 3, ]
+------------ z-axis bin = 2 ----------------
+[2, 6, 1, 1, 3, 5, 2, 3, 4, 4, ]
+------------ z-axis bin = 3 ----------------
+[5, 1, 5, 2, 1, 3, 2, 1, 6, 6, ]
+------------ z-axis bin = 4 ----------------
+[3, 3, 5, 4, 3, 5, 1, 4, 4, 3, ]
+------------ z-axis bin = 5 ----------------
+[0, 1, 0, 4, 2, 0, 5, 5, 1, 0, ]
+------------ z-axis bin = 6 ----------------
+[0, 3, 2, 3, 4, 1, 0, 3, 0, 1, ]
+------------ z-axis bin = 7 ----------------
+[2, 5, 1, 4, 1, 6, 2, 4, 2, 3, ]
+------------ z-axis bin = 8 ----------------
+[4, 2, 5, 0, 1, 5, 4, 6, 1, 4, ]
+------------ z-axis bin = 9 ----------------
+[2, 1, 5, 3, 4, 5, 0, 5, 5, 6, ]
+------------ z-axis bin = 10 ----------------
+[2, 6, 6, 4, 6, 3, 3, 0, 1, 4, ]
+------------ z-axis bin = 11 ----------------
+[2, 0, 0, 1, 6, 6, 6, 5, 1, 1, ]
+------------ z-axis bin = 12 ----------------
+[4, 6, 4, 2, 0, 2, 5, 2, 4, 5, ]
+]
+----------------------------------------------------------
+-----------------------------------------------------------------------------------------
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 0, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 1, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 2, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 3, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 4, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 5, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 6, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 7, lzaxis = 13, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 0, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 1, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 2, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 3, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 4, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 5, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 6, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 7, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 8, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 9, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 10, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 11, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 12, lep_bin = 9
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 0
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 1
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 2
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 3
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 4
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 5
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 6
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 7
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 8
+Final mixing: lref_mult = 8, lzaxis = 13, lep_bin = 9
+Time for make loop = 46122 seconds
+Finish started
+Number of good events = 0
+Number of bad events = 0
+Number of total events = 0
+Number of events where analysis was started = 0
+Number of invariant mass entries = 0
+
+----------------------- Event display ---------------------
+vertex = {-999, -999, -999}
+-----------------------------------------------------------
+
+Save data to file
+Write D0 tree
+Saved data to file
+End of analysis
+StQAInfo: =================================================================================
+StQAInfo: QAInfo:Chain              StChain::bfcChain             Ast =  0.00        Cpu =  1.00
+StQAInfo: QAInfo:Maker       StPicoDstMaker::picoDst              Ast =  0.00(100.0%) Cpu =  0.00( 0.0%)
+StInfo: --------------Error Codes-------------------------
+StInfo:      nStOK   nStWarn    nStEOF    nStErr  nStFatal
+StInfo:          0         0         0         0         0
+StInfo: --------------------------------------------------
+*** Chain not deleted***
+
+This is the end of ROOT -- Goodbye
+

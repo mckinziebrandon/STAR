@@ -106,30 +106,34 @@ void D0_Analysis::init()
 
     //----------------------------------------------------------------------------------------------------
 	cout << "Define histograms" << endl;
-	for(Int_t A = 0; A < N_h_InvMass; A++){
-	for(Int_t B = 0; B < N_h_InvMass; B++){
-	for(Int_t X = 0; X < N_h_InvMass; X++){
-	for(Int_t Y = 0; Y < N_h_InvMass; Y++){
-	for(Int_t AB = 0; AB < N_h_InvMass; AB++){
-	for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++){
-			HistName = "h_InvMass_A";
-			HistName += A;
-            HistName += "_B";
-			HistName += B;
-            HistName += "_X";
-            HistName += X;
-            HistName += "_Y";
-            HistName += Y;
-            HistName += "_AB";
-            HistName += AB;
-			HistName += "_pt";
-			HistName += i_hist_pt;
-			h_InvMass[A][B][X][Y][AB][i_hist_pt] = 
-				new TH1D(HistName.Data(),HistName.Data(),100,1.4,2.4);
+	for(Int_t A = 0; A < N_h_InvMass; A++)
+    {
+        for(Int_t B = 0; B < N_h_InvMass; B++)
+        {
+            for(Int_t X = 0; X < N_h_InvMass; X++)
+            {
+                for(Int_t Y = 0; Y < N_h_InvMass; Y++)
+                {
+                    for(Int_t AB = 0; AB < N_h_InvMass; AB++)
+                    {
+                        for(Int_t i_hist_pt = 0; i_hist_pt < N_h_InvMass_pt; i_hist_pt++)
+                        {
+                            HistName = "h_InvMass_A";
+                            HistName += A;
+                            HistName += "_B";
+                            HistName += B;
+                            HistName += "_X";
+                            HistName += X;
+                            HistName += "_Y";
+                            HistName += Y;
+                            HistName += "_AB";
+                            HistName += AB;
+                            HistName += "_pt";
+                            HistName += i_hist_pt;
+                            h_InvMass[A][B][X][Y][AB][i_hist_pt] = 
+                                new TH1D(HistName.Data(),HistName.Data(),100,1.4,2.4);
 	}}}}}}
     //----------------------------------------------------------------------------------------------------
-
-
 
     //----------------------------------------------------------------------------------------------------
     // Same event input
@@ -268,7 +272,10 @@ void D0_Analysis::loop()
             input_SE->GetEntry( 0 ); // root doesn't like it if someone starts to read a file not from the 0 entry
         }
 
-        cout << "SE_ME_loop = " << SE_ME_loop << ", start_event_use = " << start_event_use << ", stop_event_use = " << stop_event_use << ", SE_input_flag = " << SE_input_flag << endl;
+        cout << "SE_ME_loop = "         << SE_ME_loop       << ", ";
+        cout << "start_event_use = "    << start_event_use  << ", ";
+        cout << "stop_event_use = "     << stop_event_use   << ", ";
+        cout << "SE_input_flag = "      << SE_input_flag    << endl;
 
         for(Long64_t counter = start_event_use; counter < stop_event_use; counter++)
         {
@@ -342,101 +349,100 @@ void D0_Analysis::loop()
                     VerdistX                = D0_track->getVerdistX(); // distance between primary and decay vertex
                     VerdistY                = D0_track->getVerdistY(); // distance of closest approach of mother particle to primary vertex
                     dcaAB                   = D0_track->getdcaAB(); // distance of closest approach between Kaon and Pion
-        Double_t    sin_theta               = VerdistY / VerdistX; 
-                 if(sin_theta > 1)          continue;
-        Double_t    cos_theta               = TMath::Sqrt(1 - sin_theta * sin_theta);
 
-		std::vector<Double_t> cos_theta_cut, dcaA_cut, dcaB_cut, dcaAB_cut, VerdistX_cut, VerdistY_cut, pt_cut(N_h_InvMass_pt);
-        pt_cut = {0, 0.5, 1, 1.5, 2.5, 5, 10};
+                    // Obtain cos(theta) -- theta is angle between mother particle momentum and line from primary to decay vertex
+                    Double_t sin_theta, cos_theta; 
+                    sin_theta = VerdistY / VerdistX; if(sin_theta > 1) continue;
+                    cos_theta = TMath::Sqrt(1 - sin_theta * sin_theta);
 
-		// initialize vectors with cut ranges
-        for(Int_t i = 0; i < N_h_InvMass; i++)
-        {
-            dcaA_cut.push_back(0.002 + i * 0.0015);		// 20 - 95  microns
-            dcaB_cut.push_back(0.002 + i * 0.0015);		// 20 - 95  microns
-            VerdistX_cut.push_back(0.005 + i * 0.0030);	// 50- 200 microns
-            cos_theta_cut.push_back(0.98 + i * 0.0012); // 0.98 - 0.9860
-            dcaAB_cut.push_back(0.0090 - i * 0.0010);	// 90 - 40 microns 
-        }
+                    // initialize containers for cut ranges
+                    std::vector<Double_t>   dcaA_cut, dcaB_cut, dcaAB_cut, pt_cut(N_h_InvMass_pt);
+                                            VerdistX_cut, VerdistY_cut, cos_theta_cut;
 
-        // ensure all values are within cut range
-        Bool_t in_cut_range = true;
-        if(
-            fabs(dcaA)  < dcaA_cut.front()          ||
-            fabs(dcaB)  < dcaB_cut.front()          ||
-            dcaAB       > dcaAB_cut.front()         || 
-            VerdistX    < VerdistX_cut.front()      || 
-            cos_theta   < cos_theta_cut.front()     ||
-//          VerdistY    > VerdistY_cut.front()      || 
-            p_t         > pt_cut.back()             ||
-            ((fabs(qpA) > 0.60 && m2A < -10))       ||  // kaon cut
-            (fabs(qpA)  < 0.9 || fabs(qpB) < 0.9)   
-//          fabs(nsA)   < 2
-          )   
-            in_cut_range = false;
-        
-
-        // loop counter values are indices of cut vectors
-        if (in_cut_range)
-        {
-            for(Int_t A = 0; A < N_h_InvMass; A++)
-            {
-                if (fabs(dcaA) < dcaA_cut[A])       break;
-                for(Int_t B = 0; B < N_h_InvMass; B++)
-                {
-                    if (fabs(dcaB) < dcaB_cut[B])       break;
-                    for(Int_t X = 0; X < N_h_InvMass; X++)
+                    pt_cut = {0, 0.5, 1, 1.5, 2.5, 5, 10};
+                    for(Int_t i = 0; i < N_h_InvMass; i++)
                     {
-                        if (VerdistX   < VerdistX_cut[X])   break;
-                        for(Int_t Y = 0; Y < N_h_InvMass; Y++)
+                        dcaA_cut.push_back(0.002 + i * 0.0015);		// 20 - 95  microns
+                        dcaB_cut.push_back(0.002 + i * 0.0015);		// 20 - 95  microns
+                        dcaAB_cut.push_back(0.0090 - i * 0.0010);	// 90 - 40 microns 
+                        VerdistX_cut.push_back(0.005 + i * 0.0030);	// 50- 200 microns
+                        cos_theta_cut.push_back(0.98 + i * 0.0012); // 0.98 - 0.9860
+                    }
+
+                    // ensure all values are within cut range
+                    Bool_t in_cut_range = true;
+                    if(
+                        fabs(dcaA)  < dcaA_cut.front()          ||
+                        fabs(dcaB)  < dcaB_cut.front()          ||
+                        dcaAB       > dcaAB_cut.front()         || 
+                        VerdistX    < VerdistX_cut.front()      || 
+                        cos_theta   < cos_theta_cut.front()     ||
+                        p_t         > pt_cut.back()             ||
+                        (fabs(qpA) > 0.60 && m2A < -10)       ||  // kaon cut
+                        (fabs(qpA)  < 0.9 || fabs(qpB) < 0.9)   
+                      )   
+                        in_cut_range = false;
+                    
+
+                    // loop counter values are indices of cut vectors
+                    if (in_cut_range)
+                    {
+                        for(Int_t A = 0; A < N_h_InvMass; A++)
                         {
-                            if (cos_theta  < cos_theta_cut[Y])  break;
-            //              if (VerdistY   > VerdistY_cut[Y]) break;
-                            for(Int_t AB = 0; AB < N_h_InvMass; AB++)
+                            if (fabs(dcaA) < dcaA_cut[A]) break;
+                            for(Int_t B = 0; B < N_h_InvMass; B++)
                             {
-                                if (dcaAB      > dcaAB_cut[AB])     break;
-                                for(Int_t i_hist_pt = 2; i_hist_pt < 3; i_hist_pt++)
+                                if (fabs(dcaB) < dcaB_cut[B]) break;
+                                for(Int_t X = 0; X < N_h_InvMass; X++)
                                 {
-                                    if(p_t < pt_cut[i_hist_pt+1] && p_t >= pt_cut[i_hist_pt])
+                                    if (VerdistX < VerdistX_cut[X]) break;
+                                    for(Int_t Y = 0; Y < N_h_InvMass; Y++)
+                                    {
+                                        if (cos_theta < cos_theta_cut[Y]) break;
+                                        for(Int_t AB = 0; AB < N_h_InvMass; AB++)
                                         {
-                                            h_InvMass[A][B][X][Y][AB][i_hist_pt] ->Fill(InvAB);
-                                            break;
+                                            if (dcaAB > dcaAB_cut[AB]) break;
+                                            for(Int_t i_hist_pt = 2; i_hist_pt < 3; i_hist_pt++)
+                                            {
+                                                if(p_t < pt_cut[i_hist_pt+1] && p_t >= pt_cut[i_hist_pt])
+                                                {
+                                                    h_InvMass[A][B][X][Y][AB][i_hist_pt]->Fill(InvAB);
+                                                    break;
+                                                }
+                                            }
                                         }
+                                    }   
                                 }
                             }
-                        }   
+                        }
                     }
-                }
-            }
-        }
 
-        // fill special hist
-        if( fabs(dcaA) > 0.008  &&
-            fabs(dcaB) > 0.008  &&
-            dcaAB      < 0.005  &&
-            VerdistX   > 0.04   &&
-            VerdistY   < 0.004  &&
-            fabs(qpA)  > 1.5    &&
-            fabs(qpB)  > 1.5 )
-            {
-                special_h_InvMass->Fill(InvAB);
-            }
+                    // fill special hist
+                    if( fabs(dcaA) > 0.008  &&
+                        fabs(dcaB) > 0.008  &&
+                        dcaAB      < 0.005  &&
+                        VerdistX   > 0.04   &&
+                        VerdistY   < 0.004  &&
+                        fabs(qpA)  > 1.5    &&
+                        fabs(qpB)  > 1.5 )
+                        {
+                            special_h_InvMass->Fill(InvAB);
+                        }
 
-        // Mustafa's plot
-        if( fabs(dcaA) > 0.008  &&
-            fabs(dcaB) > 0.008  &&
-            dcaAB      < 0.005  &&
-            cos_theta  > 0.995  && // cos(theta) > 0.995
-            fabs(qpA)  > 1.2    &&
-            fabs(qpB)  > 1.2 )
-            {
-                special_h_InvMass_2->Fill(InvAB);
-            } 
-       
+                    // Mustafa's plot
+                    if( fabs(dcaA) > 0.008  &&
+                        fabs(dcaB) > 0.008  &&
+                        dcaAB      < 0.005  &&
+                        cos_theta  > 0.995  && // cos(theta) > 0.995
+                        fabs(qpA)  > 1.2    &&
+                        fabs(qpB)  > 1.2 )
+                        {
+                            special_h_InvMass_2->Fill(InvAB);
+                        } 
+                   
 
             }}// end of track loop
             //----------------------------------------------------------------------------------------------------
-
         } // end of event loop
     } // end of same event <-> mixed event loop
 
@@ -452,7 +458,7 @@ void D0_Analysis::finalize()
 
 	cout << "" << endl;
 	cout << "Write output" << endl;
-	Outputfile      ->cd();
+	Outputfile->cd();
     special_h_InvMass->Write();
     special_h_InvMass_2->Write();
 	Outputfile->mkdir("h_InvMass");

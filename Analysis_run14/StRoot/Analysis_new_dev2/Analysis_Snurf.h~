@@ -1,0 +1,132 @@
+#ifndef Analysis_Snurf_hh
+#define Analysis_Snurf_hh
+
+#include "TString.h"
+#include "TH2F.h"
+#include "TCutG.h"
+#include "TCanvas.h"
+
+// LBNL
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoDstMaker/StPicoDst.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoDstMaker/StPicoDstMaker.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoDstMaker/StPicoEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoDstMaker/StPicoTrack.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoDstMaker/StPicoEmcPidTraits.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoDstMaker/StPicoBTofPidTraits.h"
+
+
+//#include "../Utils/.sl64_gcc447/obj/StRoot/StRefMultCorr/StRefMultCorr.h"
+#include "StRoot/StRefMultCorr/StRefMultCorr.h"
+#include "StRoot/StRefMultCorr/CentralityMaker.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StAlexEvent/StAlexEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/Std4sEvent/Std4sEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StJetTrackEvent/StJetTrackEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StLambdaEvent/StLambdaEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StAlexV0Event/StAlexV0Event.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StAlexPhiMesonEvent/StAlexPhiMesonEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StD0Event/StD0Event.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StPicoAlexEvent/StPicoAlexEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StStarBbcUtilities/StStarBbcUtilities.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StParticleEvent/StParticleEvent.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/MyEventEmbData/MyEventEmbData.h"
+#include "../Utils/.sl64_gcc447/obj/StRoot/StCombPID/StCombPID.h"
+
+#include "StarClassLibrary/SystemOfUnits.h"
+
+#include "TTree.h"
+#include "StMessMgr.h"
+#include "TChain.h"
+#include "TNtuple.h"
+#include <TROOT.h>
+#include "TFile.h"
+#include "TPolyMarker3D.h"
+#include "TPolyLine3D.h"
+#include "TMarker3DBox.h"
+#include "TRandom.h"
+#include "TRandom3.h"
+#include "StChain.h"
+#include "TLine.h"
+#include "TProfile2D.h"
+#include "TVector3.h"
+#include "StarClassLibrary/StThreeVectorF.hh"
+#include "StarClassLibrary/StThreeVectorD.hh"
+#include "TLorentzVector.h"
+#include "StPhysicalHelixD.hh"
+#include "StDcaGeometry.h"
+
+//#include "fastjet/config.h"             // will allow a test for FJ3
+//#include "fastjet/PseudoJet.hh"
+//#include "fastjet/ClusterSequence.hh"
+//#include "fastjet/PseudoJet.hh"
+//#include "fastjet/ClusterSequence.hh"
+//#include "fastjet/ClusterSequenceArea.hh"
+//#include "fastjet/Selector.hh"
+//#include "fastjet/tools/Subtractor.hh"
+
+#include "StThreeVectorD.hh"
+//#include <StBTofUtil/StV0TofCorrection.h>
+#include "StRoot/StV0TofCorrection/StV0TofCorrection.h"
+
+
+//#include "fastjet/tools/JetMedianBackgroundEstimator.hh"
+
+using namespace std;
+//using namespace fastjet;
+
+class Analysis_Snurf {
+public:
+    Analysis_Snurf();
+    virtual ~Analysis_Snurf();
+
+    Int_t Init();
+    Int_t Make();
+    Int_t Finish();
+    void  SetOutFileName(TString outfileName) {outFileName = outfileName; cout << "Output filename = " << outFileName << endl;}
+    void  SetInputDir(TString inDir) {inputDir = inDir; cout << "Input directory = " << inDir << endl;}
+    void  SetOutputDir(TString ouDir) {outputDir = ouDir; cout << "Output directory = " << ouDir << endl;}
+    void  SetInputFile(TString infile) {inFile = infile; cout << "Input file = " << inFile << endl;}
+    void  SetInDirList(TString indir_asciifile) {inDir_asciifile = indir_asciifile; cout << "inDir_asciifile = " << inDir_asciifile << endl;}
+    void  SetInList(TString asciiparfile) {asciiParFile = asciiparfile; cout << "asciiParFile = " << asciiParFile << endl;}
+    void  SetNEvents(Int_t nevents) {nEvents = nevents; cout << "Number of analyzed events set to " << nEvents << endl;}
+    void  SetStartEvent(Int_t nfirst_event) {first_event = nfirst_event; cout << "First event = " << first_event << endl;}
+    void  SetSE_ME(Int_t nSE_ME_Flag) {eSE_ME_Flag = nSE_ME_Flag; cout << "Mixed event flag = " << eSE_ME_Flag << endl;};
+    void  SetAnalysisNum(Int_t nAnalysisNum) {eAnalysisNum = nAnalysisNum; cout << "Analysis number = " << eAnalysisNum << endl;};
+    void  SetBeamTimeNum(Int_t nBeamTimeNum) {eBeamTimeNum = nBeamTimeNum; cout << "Beam time number = " << eBeamTimeNum << endl;};
+    void  SetReCenteringFile(TString inrecentfile) {recentfile = inrecentfile; cout << "Re-centering file = " << inrecentfile.Data() << endl;};
+    void  SetShiftFile(TString inshiftfile) {shiftfile = inshiftfile; cout << "Shift method file = " << inshiftfile.Data() << endl;};
+    //void  SetChain(StChain* ninput_chain) {input = ninput_chain; cout << "Input chain set" << endl;};
+
+private:
+    TString recentfile,shiftfile;
+    TString outFileName,inputDir,outputDir,inFile,inDir_asciifile,asciiParFile;
+    Int_t nEvents;
+    Int_t first_event;
+    Int_t eSE_ME_Flag;
+    Int_t eAnalysisNum;
+    Int_t eBeamTimeNum;
+    //StChain* input;
+    TChain* input_B;
+
+    StPicoDstMaker* picoMaker;
+    StPicoDstMaker* picoMakerB;
+
+    StPicoDst*      picoDst;
+    TChain*         chain;
+    TChain*         input;
+
+    StPicoDst* Epico;
+    StPicoDst* Epico_B;
+    StPicoDst* Epico_use;
+    StPicoDst* Epico_B_use;
+    StPicoEvent* event;
+    StPicoEvent* event_B;
+    StPicoEvent* event_use;
+    StPicoEvent* event_B_use;
+    StPicoTrack* Etrack;
+    StPicoTrack* Etrack_B;
+
+    ClassDef(Analysis_Snurf,1)
+
+};
+
+#endif

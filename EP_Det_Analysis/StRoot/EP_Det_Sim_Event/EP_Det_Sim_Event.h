@@ -1,0 +1,148 @@
+#ifndef __EP_DET_SIM_EVENT_H__
+#define __EP_DET_SIM_EVENT_H__
+
+#include "TMath.h"
+#include "TObject.h"
+#include "TClonesArray.h"
+
+// A. Schmah 18.12.2012
+
+class EP_Det_Sim_Track : public TObject
+{
+private:
+    // Track properties
+    Double_t iQx;
+    Double_t iQy;
+    Double_t pT;
+    Double_t v2_in;
+    Double_t Phi_Psi_in;
+    Double_t Phi_in;
+    Double_t eta;
+    Int_t   sub_event;
+
+public:
+    EP_Det_Sim_Track() :
+        iQx(-1),iQy(-1),pT(-1),v2_in(-1),Phi_Psi_in(-1),Phi_in(-1),eta(-1),sub_event(-1)
+    {
+    }
+        ~EP_Det_Sim_Track() {}
+
+        // setters
+        void setiQx(Double_t f)                     { iQx = f;         }
+        void setiQy(Double_t f)                     { iQy = f;         }
+        void setpT(Double_t f)                      { pT = f;          }
+        void setv2_in(Double_t f)                   { v2_in = f;       }
+        void setPhi_Psi_in(Double_t f)              { Phi_Psi_in  = f; }
+        void setPhi_in(Double_t f)                  { Phi_in  = f;     }
+        void seteta(Double_t f)                     { eta = f;         }
+        void setsub_event(Int_t i)                 { sub_event  = i;  }
+
+        // getters
+        Double_t getiQx() const                        { return iQx;         }
+        Double_t getiQy() const                        { return iQy;         }
+        Double_t getpT() const                         { return pT;          }
+        Double_t getv2_in() const                      { return v2_in;       }
+        Double_t getPhi_Psi_in() const                 { return Phi_Psi_in;  }
+        Double_t getPhi_in() const                     { return Phi_in;      }
+        Double_t geteta() const                        { return eta;         }
+        Int_t   getsub_event() const                   { return sub_event;   }
+
+        ClassDef(EP_Det_Sim_Track,1)  // A simple track of a particle
+};
+
+class EP_Det_Sim_Event : public TObject
+{
+private:
+
+    Int_t   N_Tracks;
+    Int_t   N_Cent;
+    Double_t v2_smear;
+    Double_t Psi_in;
+    Double_t Psi_out;
+    Double_t Psi_subA;
+    Double_t Psi_subB;
+    Double_t Qx_subA;
+    Double_t Qy_subA;
+    Double_t Qx_subB;
+    Double_t Qy_subB;
+
+    UShort_t      fNumTracks;
+    TClonesArray* fTracks;      //->
+
+public:
+    EP_Det_Sim_Event() :
+        N_Tracks(-1),N_Cent(-1),v2_smear(-1),Psi_in(-1),Psi_out(-1),Psi_subA(-1),Psi_subB(-1),Qx_subA(-1),Qy_subA(-1),Qx_subB(-1),Qy_subB(-1)
+    {
+        fTracks      = new TClonesArray( "EP_Det_Sim_Track", 10 );
+    }
+        ~EP_Det_Sim_Event()
+        {
+            delete fTracks;
+            fTracks = NULL;
+        }
+
+        void       setN_Tracks(Double_t r)                    { N_Tracks = r;                         }
+        Double_t    getN_Tracks() const                       { return N_Tracks;                      }
+
+        void       setN_Cent(Double_t r)                      { N_Cent = r;                           }
+        Double_t    getN_Cent() const                         { return N_Cent;                        }
+
+        void       setv2_smear(Double_t r)                    { v2_smear = r;                         }
+        Double_t    getv2_smear() const                       { return v2_smear;                      }
+
+        void       setPsi_in(Double_t r)                      { Psi_in = r;                           }
+        Double_t    getPsi_in() const                         { return Psi_in;                        }
+
+        void       setPsi_out(Double_t r)                     { Psi_out = r;                          }
+        Double_t    getPsi_out() const                        { return Psi_out;                       }
+
+        void       setPsi_subA(Double_t r)                    { Psi_subA = r;                         }
+        Double_t    getPsi_subA() const                       { return Psi_subA;                      }
+
+        void       setPsi_subB(Double_t r)                    { Psi_subB = r;                         }
+        Double_t    getPsi_subB() const                       { return Psi_subB;                      }
+
+        void       setQx_subA(Double_t r)                     { Qx_subA = r;                          }
+        Double_t    getQx_subA() const                        { return Qx_subA;                       }
+
+        void       setQy_subA(Double_t r)                     { Qy_subA = r;                          }
+        Double_t    getQy_subA() const                        { return Qy_subA;                       }
+
+        void       setQx_subB(Double_t r)                     { Qx_subB = r;                          }
+        Double_t    getQx_subB() const                        { return Qx_subB;                       }
+
+        void       setQy_subB(Double_t r)                     { Qy_subB = r;                          }
+        Double_t    getQy_subB() const                        { return Qy_subB;                       }
+
+        EP_Det_Sim_Track* createTrack()
+        {
+            if (fNumTracks == fTracks->GetSize())
+                fTracks->Expand( fNumTracks + 10 );
+            if (fNumTracks >= 10000)
+            {
+                Fatal( "EP_Det_Sim_Event::createTrack()", "ERROR: Too many tracks (>10000)!" );
+                exit( 2 );
+            }
+
+            new((*fTracks)[fNumTracks++]) EP_Det_Sim_Track;
+            return (EP_Det_Sim_Track*)((*fTracks)[fNumTracks - 1]);
+        }
+        void clearTrackList()
+        {
+            fNumTracks   = 0;
+            fTracks      ->Clear();
+        }
+        UShort_t getNumTracks() const
+        {
+            return fNumTracks;
+        }
+        EP_Det_Sim_Track* getTrack(UShort_t i) const
+        {
+            return i < fNumTracks ? (EP_Det_Sim_Track*)((*fTracks)[i]) : NULL;
+        }
+
+        ClassDef(EP_Det_Sim_Event,1)  // A simple event compiled of tracks
+};
+
+
+#endif // __STALEXEVENT_H__

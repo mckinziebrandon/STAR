@@ -1,0 +1,1021 @@
+  *******************************************
+  *                                         *
+  *        W E L C O M E  to  R O O T       *
+  *                                         *
+  *   Version   5.34/09      26 June 2013   *
+  *                                         *
+  *  You are welcome to visit our Web site  *
+  *          http://root.cern.ch            *
+  *                                         *
+  *******************************************
+
+ROOT 5.34/09 (v5-34-09@v5-34-09, Jun 26 2013, 17:10:36 on linux)
+
+CINT/ROOT C/C++ Interpreter version 5.18.00, July 2, 2010
+Type ? for help. Commands must be C++ statements.
+Enclose multiple statements between { }.
+*** Float Point Exception is OFF ***
+ *** Start at Date : Fri Jun 19 23:01:57 2015
+QAInfo:You are using STAR_LEVEL : new, ROOT_LEVEL : 5.34.09_1 and node : pc2112 
+
+Processing Analysis_Snurf_Macro.cc(0,9000000,0,"Split_picoDst_200GeV_run14_23051_23100","D0_0kFull_SE",400,8)...
+PDSF/project environment selected
+Analysis_Snurf_Macro started with 9000000 events
+strangeArrayNames-arrayNames-__NARRAYS__ = 0
+ loading of shared libraries done
+Shared libraries loaded
+Start of analysis
+Output filename = _out_D0_0kFull_SE.root
+Define re-centering and shift correction files
+Re-centering file = /global/homes/a/aschmah/STAR/Analysis/Corrections/Recentering_FitParams_AuAu200run14.root
+Shift method file = /global/homes/a/aschmah/STAR/Analysis/Corrections/Shift_FitParams_AuAu200run14.root
+Au+Au @ 200 GeV run14 was selected
+Output directory = /project/projectdirs/star/aschmah/
+inDir_asciifile = /global/homes/a/aschmah/STAR/File_lists/AuAu200_run14/
+Input file = Split_picoDst_200GeV_run14_23051_23100
+First event = 0
+Number of analyzed events set to 9000000
+Mixed event flag = 0
+Analysis number = 400
+Beam time number = 8
+***************** Initializing objects *******************
+StRefMultCorr::read  Open StRoot/StRefMultCorr/Centrality_def_refmult.txt [OK]
+StRefMultCorr::readBadRuns  For refmult: open   StRoot/StRefMultCorr/bad_runs_refmult_year2010.txt [OK]
+StRefMultCorr::readBadRuns  For refmult: open   StRoot/StRefMultCorr/bad_runs_refmult_year2011.txt [OK]
+StRefMultCorr::read  Open StRoot/StRefMultCorr/Centrality_def_refmult2.txt [OK]
+StRefMultCorr::readBadRuns  For refmult2: open   StRoot/StRefMultCorr/bad_runs_refmult_year2010.txt [OK]
+StRefMultCorr::readBadRuns  For refmult2: open   StRoot/StRefMultCorr/bad_runs_refmult_year2011.txt [OK]
+StRefMultCorr::read  Open StRoot/StRefMultCorr/Centrality_def_refmult3.txt [OK]
+StRefMultCorr::readBadRuns  For refmult3: open   StRoot/StRefMultCorr/bad_runs_refmult_year2010.txt [OK]
+StRefMultCorr::readBadRuns  For refmult3: open   StRoot/StRefMultCorr/bad_runs_refmult_year2011.txt [OK]
+MAGFIELDFACTOR = 1e-14
+Read data from input file: /global/homes/a/aschmah/STAR/File_lists/AuAu200_run14/Split_picoDst_200GeV_run14_23051_23100.list
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_15106002_raw_5500040.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_15106002_raw_5500044.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_15106002_raw_5500045.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_1000011.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_1000039.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_1500006.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_1500038.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_2000004.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_2000037.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_2500006.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_2500038.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_3000006.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_3000040.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_3500010.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_3500040.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_4000006.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_4000038.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_4500007.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_4500036.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_5000010.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_5000036.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_5500006.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106002/st_physics_adc_15106002_raw_5500038.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_0000006.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000001.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000003.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000015.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000016.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000024.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000026.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000027.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1000033.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500004.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500014.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500016.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500020.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500023.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500024.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500030.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500033.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_1500034.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000003.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000016.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000019.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000020.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000024.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000025.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000031.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000032.picoDst.root
+StInfo:  Read in picoDst file /project/projectdirs/starprod/picodsts/Run14/AuAu/200GeV/physics2/P15ic/106/15106005/st_physics_15106005_raw_2000033.picoDst.root
+StInfo:  Total 50 files have been read in.
+
+************************************************************************************************************
+Number of entries in tree = 216148
+************************************************************************************************************
+
+Open the phi correction histograms for event plane analysis
+Initialize re-centering correction
+Min file id = 80054, max file id = 98056, number of indices = 688
+Open re-centering correction histograms
+Initialize shift correction
+Read shift parameter histograms
+
+-------------------------------------------------------------------------
+Total number of phi correction files = 1920
+Files with max entry > 100 = 1920
+-------------------------------------------------------------------------
+Open the cut files
+Cut files opened
+Defining output
+Output file: /project/projectdirs/star/aschmah/Split_picoDst_200GeV_run14_23051_23100_out_D0_0kFull_SE.root
+*******************************************************************************************************
+Defining ntuples
+All Ntuples defined
+Make started
+******* Start of event loop ********
+Define bad run list
+--------------- Same event analysis started: 0
+.......... 500 (0.231323%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 1000 (0.462646%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 1500 (0.693969%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 22, events/second = 0
+.......... 2000 (0.925292%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 2500 (1.15661%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 3000 (1.38794%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 3500 (1.61926%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 4000 (1.85058%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 4500 (2.08191%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 5000 (2.31323%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 5500 (2.54455%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 6000 (2.77588%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 6500 (3.0072%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 7000 (3.23852%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 7500 (3.46984%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 8000 (3.70117%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 8500 (3.93249%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 9000 (4.16381%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 9500 (4.39514%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 10000 (4.62646%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 10500 (4.85778%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 11000 (5.08911%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 11500 (5.32043%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 12000 (5.55175%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 12500 (5.78307%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 13000 (6.0144%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 13500 (6.24572%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 14000 (6.47704%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 14500 (6.70837%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 15000 (6.93969%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 15500 (7.17101%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 16000 (7.40234%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 16500 (7.63366%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 17000 (7.86498%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 17500 (8.0963%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 18000 (8.32763%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 18500 (8.55895%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 22, events/second = 0
+.......... 19000 (8.79027%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 19500 (9.0216%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 20000 (9.25292%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 20500 (9.48424%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 21000 (9.71557%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 21500 (9.94689%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 22000 (10.1782%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 22500 (10.4095%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 23000 (10.6409%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 23500 (10.8722%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 24000 (11.1035%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 24500 (11.3348%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 25000 (11.5661%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 25500 (11.7975%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 26000 (12.0288%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 11, events/second = 0
+.......... 26500 (12.2601%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 27000 (12.4914%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 27500 (12.7228%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 28000 (12.9541%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 28500 (13.1854%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 29000 (13.4167%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 29, events/second = 0
+.......... 29500 (13.6481%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 30000 (13.8794%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 30500 (14.1107%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 31000 (14.342%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 31500 (14.5733%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 20, events/second = 0
+.......... 32000 (14.8047%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 32500 (15.036%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 33000 (15.2673%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 33500 (15.4986%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 34000 (15.73%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 34500 (15.9613%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 35000 (16.1926%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 35500 (16.4239%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 36000 (16.6553%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 36500 (16.8866%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 37000 (17.1179%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 37500 (17.3492%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 38000 (17.5805%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 38500 (17.8119%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 39000 (18.0432%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 39500 (18.2745%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 40000 (18.5058%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 40500 (18.7372%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 41000 (18.9685%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 41500 (19.1998%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 42000 (19.4311%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 42500 (19.6625%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 43000 (19.8938%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 43500 (20.1251%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 44000 (20.3564%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 44500 (20.5877%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 45000 (20.8191%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 45500 (21.0504%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 46000 (21.2817%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 46500 (21.513%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 47000 (21.7444%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 47500 (21.9757%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 48000 (22.207%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 48500 (22.4383%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 49000 (22.6697%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 49500 (22.901%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 50000 (23.1323%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 50500 (23.3636%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 51000 (23.5949%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 51500 (23.8263%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 52000 (24.0576%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 52500 (24.2889%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 53000 (24.5202%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 53500 (24.7516%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 54000 (24.9829%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 54500 (25.2142%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 55000 (25.4455%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 55500 (25.6769%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 56000 (25.9082%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 56500 (26.1395%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 57000 (26.3708%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 57500 (26.6021%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 58000 (26.8335%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 58500 (27.0648%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 59000 (27.2961%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 59500 (27.5274%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 60000 (27.7588%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 60500 (27.9901%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 61000 (28.2214%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 61500 (28.4527%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 62000 (28.684%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 62500 (28.9154%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 63000 (29.1467%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 63500 (29.378%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 64000 (29.6093%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 64500 (29.8407%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 65000 (30.072%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 65500 (30.3033%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 66000 (30.5346%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 66500 (30.766%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 67000 (30.9973%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 67500 (31.2286%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 68000 (31.4599%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 68500 (31.6912%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 69000 (31.9226%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 69500 (32.1539%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 70000 (32.3852%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 70500 (32.6165%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 71000 (32.8479%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 71500 (33.0792%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 72000 (33.3105%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 72500 (33.5418%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 73000 (33.7732%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 73500 (34.0045%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 74000 (34.2358%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 74500 (34.4671%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 75000 (34.6984%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 75500 (34.9298%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 76000 (35.1611%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 76500 (35.3924%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 77000 (35.6237%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 77500 (35.8551%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 78000 (36.0864%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 78500 (36.3177%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 79000 (36.549%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 79500 (36.7804%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 80000 (37.0117%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 80500 (37.243%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 81000 (37.4743%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 81500 (37.7056%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 82000 (37.937%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 82500 (38.1683%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 83000 (38.3996%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 83500 (38.6309%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 84000 (38.8623%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 84500 (39.0936%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 85000 (39.3249%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 85500 (39.5562%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 86000 (39.7876%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 86500 (40.0189%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 87000 (40.2502%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 87500 (40.4815%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 88000 (40.7128%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 88500 (40.9442%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 89000 (41.1755%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 89500 (41.4068%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 90000 (41.6381%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 90500 (41.8695%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 91000 (42.1008%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 91500 (42.3321%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 92000 (42.5634%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 92500 (42.7948%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 93000 (43.0261%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 93500 (43.2574%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 94000 (43.4887%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 94500 (43.72%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 95000 (43.9514%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 95500 (44.1827%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 96000 (44.414%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 96500 (44.6453%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 97000 (44.8767%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 97500 (45.108%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 98000 (45.3393%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 98500 (45.5706%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 99000 (45.802%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 99500 (46.0333%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 100000 (46.2646%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 100500 (46.4959%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 22, events/second = 0
+.......... 101000 (46.7272%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 20, events/second = 0
+.......... 101500 (46.9586%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 102000 (47.1899%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 102500 (47.4212%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 103000 (47.6525%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 103500 (47.8839%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 104000 (48.1152%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 104500 (48.3465%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 105000 (48.5778%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 105500 (48.8092%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 106000 (49.0405%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 106500 (49.2718%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 107000 (49.5031%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 107500 (49.7344%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 108000 (49.9658%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 108500 (50.1971%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 109000 (50.4284%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 109500 (50.6597%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 110000 (50.8911%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 110500 (51.1224%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 111000 (51.3537%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 111500 (51.585%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 112000 (51.8163%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 112500 (52.0477%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 113000 (52.279%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 113500 (52.5103%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 114000 (52.7416%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 114500 (52.973%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 115000 (53.2043%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 115500 (53.4356%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 116000 (53.6669%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 116500 (53.8983%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 117000 (54.1296%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 117500 (54.3609%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 118000 (54.5922%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 118500 (54.8235%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 119000 (55.0549%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 119500 (55.2862%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 120000 (55.5175%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 120500 (55.7488%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 121000 (55.9802%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 22, events/second = 0
+.......... 121500 (56.2115%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 122000 (56.4428%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 122500 (56.6741%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 123000 (56.9055%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 123500 (57.1368%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 124000 (57.3681%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 124500 (57.5994%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 125000 (57.8307%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 125500 (58.0621%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 126000 (58.2934%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 126500 (58.5247%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 127000 (58.756%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 127500 (58.9874%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 128000 (59.2187%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 128500 (59.45%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 129000 (59.6813%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 129500 (59.9127%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 130000 (60.144%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 130500 (60.3753%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 131000 (60.6066%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 131500 (60.8379%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 132000 (61.0693%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 132500 (61.3006%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 133000 (61.5319%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 133500 (61.7632%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 134000 (61.9946%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 134500 (62.2259%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 135000 (62.4572%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 135500 (62.6885%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 136000 (62.9198%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 136500 (63.1512%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 137000 (63.3825%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 137500 (63.6138%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 138000 (63.8451%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 138500 (64.0765%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 139000 (64.3078%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 139500 (64.5391%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 140000 (64.7704%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 140500 (65.0018%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 141000 (65.2331%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 141500 (65.4644%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 142000 (65.6957%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 142500 (65.927%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 143000 (66.1584%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 143500 (66.3897%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 144000 (66.621%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 144500 (66.8523%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 145000 (67.0837%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 145500 (67.315%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 146000 (67.5463%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 146500 (67.7776%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 147000 (68.009%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 147500 (68.2403%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 148000 (68.4716%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 148500 (68.7029%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 149000 (68.9342%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 149500 (69.1656%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 150000 (69.3969%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 150500 (69.6282%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 151000 (69.8595%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 151500 (70.0909%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 152000 (70.3222%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 152500 (70.5535%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 153000 (70.7848%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 153500 (71.0162%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 154000 (71.2475%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 154500 (71.4788%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 155000 (71.7101%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 155500 (71.9414%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 156000 (72.1728%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 156500 (72.4041%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 157000 (72.6354%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 157500 (72.8667%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 22, events/second = 0
+.......... 158000 (73.0981%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 158500 (73.3294%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 159000 (73.5607%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 159500 (73.792%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 160000 (74.0234%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 160500 (74.2547%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 161000 (74.486%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 161500 (74.7173%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 162000 (74.9486%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 162500 (75.18%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 163000 (75.4113%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 163500 (75.6426%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 164000 (75.8739%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 164500 (76.1053%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 165000 (76.3366%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 165500 (76.5679%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 166000 (76.7992%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 166500 (77.0306%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 167000 (77.2619%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 167500 (77.4932%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 168000 (77.7245%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 168500 (77.9558%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 169000 (78.1872%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 169500 (78.4185%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 11, events/second = 0
+.......... 170000 (78.6498%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 170500 (78.8811%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 171000 (79.1125%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 171500 (79.3438%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 172000 (79.5751%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 172500 (79.8064%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 173000 (80.0378%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 173500 (80.2691%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 174000 (80.5004%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 174500 (80.7317%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 175000 (80.963%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 175500 (81.1944%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 176000 (81.4257%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 176500 (81.657%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 177000 (81.8883%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 177500 (82.1197%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 178000 (82.351%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 178500 (82.5823%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 179000 (82.8136%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 179500 (83.045%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 20, events/second = 0
+.......... 180000 (83.2763%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 180500 (83.5076%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 181000 (83.7389%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 181500 (83.9702%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 182000 (84.2016%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 182500 (84.4329%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 183000 (84.6642%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 183500 (84.8955%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 11, events/second = 0
+.......... 184000 (85.1269%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 184500 (85.3582%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 22, events/second = 0
+.......... 185000 (85.5895%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 185500 (85.8208%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 20, events/second = 0
+.......... 186000 (86.0521%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 186500 (86.2835%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 187000 (86.5148%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 187500 (86.7461%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 188000 (86.9774%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 188500 (87.2088%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 189000 (87.4401%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 189500 (87.6714%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 190000 (87.9027%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 190500 (88.1341%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 191000 (88.3654%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 191500 (88.5967%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 192000 (88.828%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 192500 (89.0593%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 193000 (89.2907%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 193500 (89.522%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 194000 (89.7533%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 194500 (89.9846%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 195000 (90.216%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 11, events/second = 0
+.......... 195500 (90.4473%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 196000 (90.6786%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 196500 (90.9099%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 11, events/second = 0
+.......... 197000 (91.1413%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 197500 (91.3726%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 198000 (91.6039%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 198500 (91.8352%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 199000 (92.0665%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 199500 (92.2979%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 200000 (92.5292%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 19, events/second = 0
+.......... 200500 (92.7605%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 201000 (92.9918%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 201500 (93.2232%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 202000 (93.4545%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 202500 (93.6858%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 203000 (93.9171%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 203500 (94.1485%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 204000 (94.3798%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 204500 (94.6111%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 205000 (94.8424%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 205500 (95.0737%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 206000 (95.3051%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 206500 (95.5364%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 207000 (95.7677%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 207500 (95.999%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 208000 (96.2304%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 208500 (96.4617%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 209000 (96.693%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 209500 (96.9243%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 210000 (97.1557%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 210500 (97.387%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 18, events/second = 0
+.......... 211000 (97.6183%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 17, events/second = 0
+.......... 211500 (97.8496%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 16, events/second = 0
+.......... 212000 (98.0809%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 212500 (98.3123%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 213000 (98.5436%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 12, events/second = 0
+.......... 213500 (98.7749%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 214000 (99.0062%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+.......... 214500 (99.2376%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 215000 (99.4689%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 14, events/second = 0
+.......... 215500 (99.7002%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 15, events/second = 0
+.......... 216000 (99.9315%) 
+==> Processing data, Total number of events = 216148, total counter = 0, total counter A = 0, diff time = 13, events/second = 0
+..Time for make loop = 6203 seconds
+Finish started
+Number of good events = 0
+Number of bad events = 0
+Number of total events = 0
+Number of events where analysis was started = 0
+Number of invariant mass entries = 0
+
+----------------------- Event display ---------------------
+vertex = {-999, -999, -999}
+-----------------------------------------------------------
+
+Save data to file
+Write D0 tree
+Saved data to file
+End of analysis
+StQAInfo: =================================================================================
+StQAInfo: QAInfo:Chain              StChain::bfcChain             Ast =  0.00        Cpu =  1.00
+StQAInfo: QAInfo:Maker       StPicoDstMaker::picoDst              Ast =  0.00(100.0%) Cpu =  0.00( 0.0%)
+StInfo: --------------Error Codes-------------------------
+StInfo:      nStOK   nStWarn    nStEOF    nStErr  nStFatal
+StInfo:          0         0         0         0         0
+StInfo: --------------------------------------------------
+*** Chain not deleted***
+
+This is the end of ROOT -- Goodbye
+
