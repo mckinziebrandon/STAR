@@ -9,38 +9,8 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
 
     //-------------------------------------------------
     cout << "Open inputfile" << endl;
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/JetNtuples/F_mixed_event_z_9_mult_0_Psi_0_mode_31_In_mode_1.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/Merge_Jet_200GeV_mode_31_In_mode_1_V17_R_03.root"; // event 3
-
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/PYTHIA_list_hard_bin_55PtHard65_mode311_test_03_V1.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/PYTHIA_list_hard_bin_55PtHard65_mode311_test_04_V1.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/PYTHIA_list_hard_bin_55PtHard65_mode311_test_05_V1.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/PYTHIA_list_hard_bin_55PtHard65_mode311_test_06_V1.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/Merge_Ntuple_60_80_R03.root";
-    //TString addfile = "./Data/Merge_Ntuple_0_10_0k10k_R03.root";
     TString addfile;
-    addfile = "data/NT_ReCoil_Jet/test.root";
-    //if(Radius == 0) addfile = "./Data/PYTHIA_list_hard_bin_55PtHard65_mode311_R02_V1.root";
-    //if(Radius == 1) addfile = "./Data/PYTHIA_list_hard_bin_55PtHard65_mode311_R03_V1.root";
-    //if(Radius == 2) addfile = "./Data/PYTHIA_list_hard_bin_55PtHard65_mode311_R04_V1.root";
-    //if(Radius == 3) addfile = "./Data/PYTHIA_list_hard_bin_55PtHard65_mode311_R05_V1.root";
-    //if(Radius == 4) addfile = "./Data/PYTHIA_list_hard_bin_55PtHard65_mode311_R06_V1.root";
-
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_R03.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_R04.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_R05.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_R06.root";
-
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_All_R03.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_All_R04.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_All_R05.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/F_mixed_event_z_9_mult_7_Psi_3_mode_31_In_mode_1_0_10_All_R06.root";
-
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/F_mixed_event_z_9_mult_0_Psi_0_mode_31_In_mode_1.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/File_60_80_R03.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/File_60_80_R04.root";
-    //TString addfile = "/project/projectdirs/star/aschmah/Jet/AuAu200_run11/PlotJets/File_60_80_R05.root";
-    //TString addfile = "./Data/File_60_80_R06.root";
+    addfile = "test.root";
 
     TChain* input_SE  = new TChain( "NT_ReCoil_Jet" , "NT_ReCoil_Jet" );
     input_SE ->AddFile(addfile.Data(),-1, "NT_ReCoil_Jet" );
@@ -89,20 +59,20 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
     TPolyMarker* PM_jet_area_tracks[N_max_tracks];
 
     const Int_t N_max_jets = 120;
-    TPolyMarker* PM_jet_center[N_max_jets]; // [jet index]
-    Double_t Array_Jet_info[N_max_jets][3]; // [jet][eta,phi,pt]
+    TPolyMarker* PM_jet_center[N_max_jets];     // [jet index]
+    Double_t Array_Jet_info[N_max_jets][3];     // [jet][eta,phi,pt]
     Double_t Array_track_info[N_max_tracks][3]; // [jet][eta,phi,pt]
-    TString TS_jet_label[N_max_jets]; // [jet index]
-    Double_t Jet_center_array[N_max_jets][2]; // [jet index][phi,eta]
+    TString TS_jet_label[N_max_jets];           // [jet index]
+    Double_t Jet_center_array[N_max_jets][2];   // [jet index][phi,eta]
 
     TLorentzVector   lorentz_vector;
-    Double_t bField = 4.98948e-14;
+    Double_t bField = 4.98948e-14; //magnetic field ?
     Double_t jet_delta_phi_cut = 45.0*(2.0*Pi/360.0);;
 
     Long64_t start_event_use = 0;
     Long64_t stop_event_use  = N_entries;
-    Long64_t event_counter   = -1;
-    Long64_t EventId_old     = -1;
+    Long64_t event_counter   = -1;//?
+    Long64_t EventId_old     = -1;//?
     Long64_t track_counter   = 0;
     Long64_t track_real_use_counter = 0;
     Long64_t track_area_use_counter = 0;
@@ -160,6 +130,7 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
         }
     }
     if(flag_high_pT) event_plot = event_counter;
+
     event_counter   = -1;
     EventId_old     = -1;
     //-------------------------------------------------------------------------------
@@ -194,13 +165,14 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
         }
 
         
+        // if we wanted to see nth jet event and this is the nth jet event
         if(event_counter == event_plot && track_counter == 0)
         {
             leading_pt     = 0.0;
             leading_pt_phi = 0.0;
             Jet_index      = -1;
 
-            cout << "Get highest pt particle in event for event = " << event_counter << ", counter = " << counter << endl;
+            cout << "Get highest pt particle in event for event = " << event_counter << ", counter = " << counter << ", Event_Id = " << EventId << endl;
             Int_t   leading_pt_counter = 0;
             for(Long64_t counterB = counter; counterB < stop_event_use; counterB++)
             {
@@ -315,7 +287,7 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
 
 
     //-------------------------------------------------
-    TCanvas* c_2D_jet_eta_vs_phi = new TCanvas("c_2D_jet_eta_vs_phi","c_2D_jet_eta_vs_phi",10,10,850*1.5,350*1.5);
+    TCanvas* c_2D_jet_eta_vs_phi = new TCanvas("c_2D_jet_eta_vs_phi","c_2D_jet_eta_vs_phi",10, 10, 850*1.5, 350*1.5); // ww, wh
     c_2D_jet_eta_vs_phi->cd();
     c_2D_jet_eta_vs_phi->cd()->SetTicks(1,1);
     c_2D_jet_eta_vs_phi->cd()->SetGrid(0,0);
@@ -354,14 +326,8 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
 
 
     //-------------------------------------------------
-    TCanvas* c_Jupiter = new TCanvas("Jupiter","Jupiter",10,10,850*1.5,350*1.5);
-    c_Jupiter->cd();
-    c_Jupiter->cd()->SetTicks(1,1);
-    c_Jupiter->cd()->SetGrid(0,0);
-    c_Jupiter->cd()->SetRightMargin(0.1);
-    c_Jupiter->cd()->SetLeftMargin(0.22);
-    c_Jupiter->cd()->SetBottomMargin(0.2);
-    c_Jupiter->cd()->SetLogy(0);
+    TCanvas* c_Jupiter = new TCanvas("Jupiter","Jupiter",10,10, 760*2, 400*2);
+    c_Jupiter->Divide(2, 2);
 
     h_2D_jet_eta_vs_phi_no_fill->SetStats(0);
     h_2D_jet_eta_vs_phi_no_fill->SetTitle("");
@@ -379,55 +345,92 @@ void PlotJets2D(Long64_t event_plot = 0, Int_t flag_high_pT = 0, Int_t Radius = 
     h_2D_jet_eta_vs_phi_no_fill->GetYaxis()->SetTitle("#eta");
     h_2D_jet_eta_vs_phi_no_fill->GetXaxis()->SetRangeUser(0.0-0.5,2.0*Pi+0.5);
     h_2D_jet_eta_vs_phi_no_fill->GetYaxis()->SetRangeUser(-1.1,1.1);
-    h_2D_jet_eta_vs_phi_no_fill->DrawCopy("colz");
 
-    // Draw acceptance boundaries for tracks
-    PlotLine(0.0,2.0*Pi,-1.0,-1.0,1,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-    PlotLine(0.0,2.0*Pi,1.0,1.0,1,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-    PlotLine(0.0,0.0,-1.0,1.0,1,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-    PlotLine(2.0*Pi,2.0*Pi,-1.0,1.0,1,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
+    // define different phi & eta acceptance cuts
+    const Int_t lo(0), hi(1);
+    Float_t phi_acc[4][2] = {{0.0,    1.0*Pi},  
+                             {1.0*Pi, 2.0*Pi},  
+                             {0.5*Pi, 1.5*Pi},  
+                             {0.0,    2.0*Pi}}; 
+    Float_t eta_acc[4][2] = {{-1.0,   0.0},
+                             {0.0,    1.0},
+                             {-0.5,   0.5}, 
+                             {-1.0,   1.0}};
 
-    // Draw acceptance boundaries for jet centroids
-    PlotLine(0.0,2.0*Pi,-1.0+0.3,-1.0+0.3,2,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-    PlotLine(0.0,2.0*Pi,1.0-0.3,1.0-0.3,2,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-    PlotLine(0.0,0.0,-1.0+0.3,1.0-0.3,2,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-    PlotLine(2.0*Pi,2.0*Pi,-1.0+0.3,1.0-0.3,2,1,2); // x1_val, x2_val, y1_val, y2_val, Line_Col, LineWidth, LineStyle
-
-    TBox* Box_fiducial_cut_upper = new TBox();
-    Box_fiducial_cut_upper->SetFillColor(kRed-8);
-    Box_fiducial_cut_upper->SetFillStyle(3001);
-    Box_fiducial_cut_upper->SetX1(0.0);
-    Box_fiducial_cut_upper->SetX2(2.0*Pi);
-    Box_fiducial_cut_upper->SetY1(1.0-0.3);
-    Box_fiducial_cut_upper->SetY2(1.0);
-    Box_fiducial_cut_upper->Draw("same");
-
-    TBox* Box_fiducial_cut_lower = new TBox();
-    Box_fiducial_cut_lower->SetFillColor(kRed-8);
-    Box_fiducial_cut_lower->SetFillStyle(3001);
-    Box_fiducial_cut_lower->SetX1(0.0);
-    Box_fiducial_cut_lower->SetX2(2.0*Pi);
-    Box_fiducial_cut_lower->SetY1(-1.0+0.3);
-    Box_fiducial_cut_lower->SetY2(-1.0);
-    Box_fiducial_cut_lower->Draw("same");
-
-
-    //PM_jet_real_tracks_trig->Draw();
-
-    for(Int_t i_track = 0; i_track < track_real_use_counter; i_track++)
+    // plot for different acceptances of eta & phi
+    for (Int_t i_canvas = 1; i_canvas <= 4; i_canvas++)
     {
-        PM_jet_real_tracks[i_track]->Draw();
-    }
-    for(Int_t i_track = 0; i_track < track_area_use_counter; i_track++)
-    {
-        PM_jet_area_tracks[i_track]->Draw();
-    }
-    for(Int_t i_jet = 0; i_jet < Jet_index+1; i_jet++)
-    {
-        PM_jet_center[i_jet] ->Draw();
+        c_Jupiter->cd(i_canvas);
+        c_Jupiter->cd(i_canvas)->SetTicks(1,1);
+        c_Jupiter->cd(i_canvas)->SetGrid(0,0);
+        c_Jupiter->cd(i_canvas)->SetRightMargin(0.1);
+        c_Jupiter->cd(i_canvas)->SetLeftMargin(0.22);
+        c_Jupiter->cd(i_canvas)->SetBottomMargin(0.2);
+        c_Jupiter->cd(i_canvas)->SetLogy(0);
 
-        //cout << "i_jet: " << i_jet << ", jet pt: " << TS_jet_label[i_jet].Data() << endl;
-        plotTopLegend((char*)TS_jet_label[i_jet].Data(),Jet_center_array[i_jet][0]-0.2,Jet_center_array[i_jet][1]-0.15,0.035,1,0.0,42,0,0);
+        h_2D_jet_eta_vs_phi_no_fill->DrawCopy("colz");
+
+        // Draw acceptance boundaries for tracks
+        // c=color, w=width, s=style
+        //       x1,     x2,     y1,    y2, c, w, s 
+        PlotLine(   phi_acc[i_canvas][lo], phi_acc[i_canvas][hi], 
+                    eta_acc[i_canvas][lo], eta_acc[i_canvas][lo], 1, 1, 2); 
+        PlotLine(   phi_acc[i_canvas][lo], phi_acc[i_canvas][hi],  
+                    eta_acc[i_canvas][hi], eta_acc[i_canvas][hi], 1, 1, 2); 
+        PlotLine(   phi_acc[i_canvas][lo], phi_acc[i_canvas][lo],    
+                    eta_acc[i_canvas][lo], eta_acc[i_canvas][hi], 1, 1, 2); 
+        PlotLine(   phi_acc[i_canvas][hi], phi_acc[i_canvas][hi],    
+                    eta_acc[i_canvas][lo], eta_acc[i_canvas][hi], 1, 1, 2); 
+
+        // Draw acceptance boundaries for jet centroids
+        // c=color, w=width, s=style
+        //       x1,     x2,      y1,       y2,      c, w, s 
+        Double_t R = jet_radius;
+        PlotLine(   phi_acc[i_canvas][lo],      phi_acc[i_canvas][hi], 
+                    eta_acc[i_canvas][lo]+R,    eta_acc[i_canvas][lo]+R, 2, 1, 2); 
+        PlotLine(   phi_acc[i_canvas][lo],      phi_acc[i_canvas][hi],  
+                    eta_acc[i_canvas][hi]-R,    eta_acc[i_canvas][hi]-R, 2, 1, 2); 
+        PlotLine(   phi_acc[i_canvas][lo],      phi_acc[i_canvas][lo],  
+                    eta_acc[i_canvas][lo]+R,    eta_acc[i_canvas][hi]-R, 2, 1, 2); 
+        PlotLine(   phi_acc[i_canvas][hi],      phi_acc[i_canvas][hi], 
+                    eta_acc[i_canvas][lo]+R,    eta_acc[i_canvas][hi]-R, 2, 1, 2); 
+
+        TBox* Box_fiducial_cut_upper = new TBox();
+        Box_fiducial_cut_upper->SetFillColor(kRed-8);
+        Box_fiducial_cut_upper->SetFillStyle(3001);
+        Box_fiducial_cut_upper->SetX1(phi_acc[i_canvas][lo]);
+        Box_fiducial_cut_upper->SetX2(phi_acc[i_canvas][hi]);
+        Box_fiducial_cut_upper->SetY1(eta_acc[i_canvas][hi]-R);
+        Box_fiducial_cut_upper->SetY2(eta_acc[i_canvas][hi]);
+        Box_fiducial_cut_upper->Draw("same");
+
+        TBox* Box_fiducial_cut_lower = new TBox();
+        Box_fiducial_cut_lower->SetFillColor(kRed-8);
+        Box_fiducial_cut_lower->SetFillStyle(3001);
+        Box_fiducial_cut_lower->SetX1(phi_acc[i_canvas][lo]);
+        Box_fiducial_cut_lower->SetX2(phi_acc[i_canvas][hi]);
+        Box_fiducial_cut_lower->SetY1(eta_acc[i_canvas][lo]+R);
+        Box_fiducial_cut_lower->SetY2(eta_acc[i_canvas][lo]);
+        Box_fiducial_cut_lower->Draw("same");
+
+
+        //PM_jet_real_tracks_trig->Draw();
+
+        for(Int_t i_track = 0; i_track < track_real_use_counter; i_track++)
+        {
+            PM_jet_real_tracks[i_track]->Draw();
+        }
+        for(Int_t i_track = 0; i_track < track_area_use_counter; i_track++)
+        {
+            PM_jet_area_tracks[i_track]->Draw();
+        }
+        for(Int_t i_jet = 0; i_jet < Jet_index+1; i_jet++)
+        {
+            PM_jet_center[i_jet] ->Draw();
+
+            //cout << "i_jet: " << i_jet << ", jet pt: " << TS_jet_label[i_jet].Data() << endl;
+            plotTopLegend((char*)TS_jet_label[i_jet].Data(),Jet_center_array[i_jet][0]-0.2,Jet_center_array[i_jet][1]-0.15,0.035,1,0.0,42,0,0);
+        }
     }
     //-------------------------------------------------
 
